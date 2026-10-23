@@ -1,3 +1,6 @@
+
+
+Index · HTML
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -5,193 +8,1014 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Bhumi Aggarwal – Backend Developer</title>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,800&family=Hind:wght@400;500;600&display=swap">
-<script>document.documentElement.className="js"</script>
+ 
+<!-- Marks that JS is available, so scroll-reveal styles only apply when they can actually run -->
+<script>document.documentElement.className = "js";</script>
+ 
 <style>
-:root{--night:#0d1633;--dusk:#2b2a6b;--gold:#e8b04a;--rose:#d9487b;--blue:#1f3fae;--tunnel:#0a1330;--light:#f4f6fb;--ink:#14203d;--card:#fff;--muted:#5a6578;--post-bg:#dfe6f5;--paper:#fffdf6;--paper-ink:#2a2418;
-box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
-@media(prefers-color-scheme:dark){:root:not([data-theme="light"]){--light:#111a30;--ink:#e8edf6;--card:#1a2542;--muted:#9aa8c0;--post-bg:#0f1830;--paper:#232018;--paper-ink:#f0e8d0;color-scheme:dark}}
-:root[data-theme="dark"]{--light:#111a30;--ink:#e8edf6;--card:#1a2542;--muted:#9aa8c0;--post-bg:#0f1830;--paper:#232018;--paper-ink:#f0e8d0;color-scheme:dark}
-html{height:100%;scroll-padding-top:env(safe-area-inset-top,0px);scroll-behavior:smooth}
-*,*::before,*::after{box-sizing:inherit}
-body{margin:0;font:400 17px/1.65 Hind,system-ui,sans-serif;background:var(--night);color:#fff;overflow-x:hidden}
-h1,h2,h3{font-family:Fraunces,Georgia,serif;margin:0;line-height:1.08}
-h2{font-weight:800;font-size:clamp(2rem,5.5vw,3.1rem)}
-.fr{font:italic 500 1.05rem Fraunces,serif;color:var(--gold);display:block;margin-top:6px}
-a{color:inherit}button{font:inherit;cursor:pointer}
-:focus-visible{outline:3px solid var(--gold);outline-offset:3px}
-.wrap{max-width:980px;margin:0 auto;padding:0 24px}
-/* hero */
-.hero{min-height:100vh;min-height:100svh;background:linear-gradient(180deg,var(--night),var(--dusk) 60%,#8a3d7a 115%);overflow:hidden;display:flex;align-items:center}
-.stars{position:absolute;inset:0;background-image:radial-gradient(1.6px 1.6px at 20px 30px,#fff,transparent),radial-gradient(1.2px 1.2px at 90px 80px,#fff,transparent),radial-gradient(1.6px 1.6px at 150px 20px,#fff,transparent),radial-gradient(1px 1px at 60px 120px,#fff,transparent);background-size:190px 160px;animation:tw 5s infinite alternate}
-@keyframes tw{to{opacity:.35}}
-nav{position:absolute;top:calc(env(safe-area-inset-top,0px) + 18px);left:0;right:0;z-index:3}
-nav .wrap{display:flex;justify-content:space-between;font-weight:500}
-nav a{text-decoration:none;margin-left:22px}nav a:first-child{margin:0;font-family:Fraunces;font-weight:800}
-.hero .wrap{position:relative;z-index:2;display:grid;grid-template-columns:1.25fr .75fr;gap:20px;align-items:center;width:100%;padding-top:70px}
-.hello{color:var(--gold);font-weight:600;margin:0}
-h1{font-weight:800;font-size:clamp(2.8rem,8.5vw,5.6rem);letter-spacing:-.03em;margin:10px 0 18px}
-.lede{font-size:1.2rem;max-width:31em;opacity:.9;margin:0 0 28px}
-.btn{display:inline-block;background:var(--gold);color:#241a05;padding:13px 26px;border-radius:999px;font-weight:600;text-decoration:none;border:0}
-.btn.alt{background:transparent;color:#fff;border:2px solid #fff;margin-left:10px}
-.tower{width:100%;max-height:76vh;cursor:pointer;will-change:transform}
-.tower path,.tower line{fill:none;stroke:var(--gold);stroke-width:2.6;stroke-linecap:round;stroke-dasharray:1200;stroke-dashoffset:1200;animation:draw 3s .3s forwards}
-@keyframes draw{to{stroke-dashoffset:0}}
-.tower circle{fill:#fff;opacity:0;animation:tw 1.3s 3s infinite alternate}
-.roofs{position:absolute;bottom:-1px;left:0;right:0;height:64px;background:var(--tunnel);clip-path:polygon(0 65%,7% 35%,13% 65%,20% 25%,28% 65%,36% 40%,44% 65%,52% 20%,60% 65%,68% 35%,76% 65%,84% 30%,92% 65%,100% 45%,100% 100%,0 100%)}
-/* metro */
-.metro{background:var(--tunnel);padding:60px 0 90px}
-.scene{position:relative;height:290px;margin-top:34px;border-radius:20px;overflow:hidden;border:1px solid #2c4170;box-shadow:0 20px 50px rgba(0,0,0,.45),inset 0 0 80px rgba(0,0,0,.5);background:repeating-linear-gradient(0deg,rgba(255,255,255,.07) 0 1px,transparent 1px 34px),repeating-linear-gradient(90deg,rgba(255,255,255,.07) 0 1px,transparent 1px 68px) var(--pw,0) 0,linear-gradient(180deg,#0b1d3f,#14345f 60%,#0b1a3a)}
-.scene::before{content:"";position:absolute;left:0;right:0;top:0;height:60px;background:radial-gradient(circle,#fff1c2 0 3px,rgba(255,214,120,.4) 4px 13px,transparent 16px) var(--px,0) 18px/160px 40px repeat-x;z-index:0}
-.scene::after{content:"";position:absolute;left:0;right:0;top:0;bottom:70px;background:repeating-linear-gradient(90deg,rgba(232,176,74,.22) 0 2px,transparent 2px 160px) var(--px,0) 0;-webkit-mask-image:linear-gradient(#000,transparent 70%);mask-image:linear-gradient(#000,transparent 70%);pointer-events:none;z-index:0}
-.rail{position:absolute;left:0;right:0;bottom:70px;height:6px;background:linear-gradient(#aab3c9,#5b6684)}
-.plat{position:absolute;left:0;right:0;bottom:0;height:70px;background:linear-gradient(#1f2f5c,#0d1634);border-top:3px solid var(--gold)}
-.st{position:absolute;bottom:16px;transform:translateX(-50%);background:#16379a;color:#fff;border:2px solid #f4f1e8;outline:1px solid var(--gold);outline-offset:2px;border-radius:5px;padding:2px 14px;font:600 .95rem Hind;z-index:3;letter-spacing:.04em}
-.st[aria-current="true"]{background:var(--gold);color:#241a05}
-.train{position:absolute;left:0;bottom:76px;width:240px;display:flex;gap:3px;transform-origin:center bottom;will-change:transform;z-index:2}
-.train::after{content:"";position:absolute;left:100%;bottom:22px;width:150px;height:46px;background:linear-gradient(90deg,rgba(255,236,160,.35),transparent);clip-path:polygon(0 40%,100% 0,100% 100%,0 60%);pointer-events:none}
-.car{position:relative;flex:1;height:64px;background:linear-gradient(180deg,#f6f7fb,#cfd5e2 70%);border-radius:12px 12px 4px 4px;display:flex;justify-content:space-around;align-items:center;padding:0 6px;border-bottom:12px solid #17306e;box-shadow:inset 0 -3px 0 var(--gold)}
-.car:last-child{border-radius:12px 40px 4px 4px}
-.car:last-child::before{content:"";position:absolute;right:-3px;top:38px;width:8px;height:8px;border-radius:50%;background:#fff6c8;box-shadow:0 0 16px 7px rgba(255,236,150,.75)}
-.car::after{content:"";position:absolute;bottom:-18px;left:12px;width:13px;height:13px;border-radius:50%;background:#1a1d2b;box-shadow:42px 0 #1a1d2b}
-.w{width:15px;height:24px;border-radius:9px 9px 3px 3px;background:linear-gradient(#ffeab0,#d6a94d);box-shadow:0 0 10px rgba(255,214,120,.55)}
-.dr{display:flex;width:20px;height:44px;gap:1px;overflow:hidden;background:linear-gradient(#ffeab0,#d6a94d);margin-top:6px;border-radius:4px 4px 0 0}
-.dr b{flex:1;background:#17306e;transition:transform 1s cubic-bezier(.5,0,.2,1);border-top:3px solid var(--gold)}
-.train.stop .dr b:first-child{transform:translateX(-100%)}.train.stop .dr b:last-child{transform:translateX(100%)}
-.badge{position:absolute;top:-30px;left:50%;transform:translateX(-50%);background:var(--gold);color:#241a05;font:600 .75rem Hind;padding:0 12px;border-radius:8px;white-space:nowrap;opacity:0;transition:opacity .5s}
-.train.stop .badge{opacity:1}
-.hero{position:relative}
-.metro,.work,.back,.contact{position:relative;z-index:1}
-.hint{position:absolute;bottom:150px;left:50%;transform:translateX(-50%);z-index:3;color:var(--gold);text-decoration:none;font-weight:600;font-size:.95rem;animation:bobh 2s ease-in-out infinite alternate}
-@keyframes bobh{to{transform:translate(-50%,8px)}}
-.js .rv{opacity:0;transform:translateY(16px);transition:opacity .7s,transform .7s}.js .rv.in{opacity:1;transform:none}
-.js .typed{clip-path:inset(0 100% 0 0)}.js .typed.in{clip-path:inset(0);transition:clip-path 2s steps(34)}
-.js .card{opacity:0;transform:translate(60%,40px) rotate(14deg);transition:transform 1.2s cubic-bezier(.2,.9,.25,1.08),opacity .6s}.js .card.in{opacity:1;transform:rotate(-1deg)}
-.card.in .stamp{animation:stampIn .5s 1.1s both}
-@keyframes stampIn{from{transform:scale(2.6) rotate(-12deg);opacity:0}to{transform:rotate(4deg);opacity:1}}
-.contact{overflow:hidden}
-.arch{position:absolute;bottom:-1px;left:0;right:0;height:60px;background:var(--tunnel)}
-.arch svg{position:absolute;bottom:100%;left:50%;transform:translateX(-50%);width:min(460px,92%);height:auto;display:block}
-.tiles{position:relative;z-index:1;height:86px;display:flex;align-items:center;justify-content:center;background-color:#f6f8fc;background-image:linear-gradient(#c9d1e2 1px,transparent 1px),linear-gradient(90deg,#c9d1e2 1px,transparent 1px);background-size:44px 22px;box-shadow:inset 0 26px 28px -14px rgba(0,0,0,.45)}
-.tiles span{background:#16379a;color:#fff;font:600 1rem Hind,sans-serif;letter-spacing:.14em;padding:6px 22px;border:3px solid #fff;outline:2px solid var(--gold);border-radius:6px}
-.contact::before{content:"";position:absolute;top:0;left:0;right:0;height:11px;background:radial-gradient(circle at 10px 0,#16224a 7px,transparent 7.5px) 0 0/20px 11px repeat-x}
-.info{background:var(--card);color:var(--ink);border-radius:16px;padding:22px 28px;margin-top:24px;min-height:140px;border-left:6px solid var(--gold)}
-.info b{font:800 2.2rem Fraunces;color:var(--blue)}
-@media(prefers-color-scheme:dark){.info b{color:var(--gold)}}
-.info h3{font-size:1.4rem;margin:2px 0 6px}.info p{margin:0;color:var(--muted)}
-.board{position:absolute;top:74px;z-index:3;left:50%;transform:translateX(-50%);background:#050814;border:2px solid #3a4a86;border-radius:8px;padding:4px 16px;font:600 .9rem ui-monospace,Menlo,monospace;color:#ffb347;white-space:nowrap;max-width:94%;overflow:hidden;text-overflow:ellipsis}
-.ctl{margin-top:18px;background:none;border:2px solid #fff;color:#fff;border-radius:999px;padding:5px 18px}
-/* projects */
-.work{background:var(--light);color:var(--ink);padding:90px 0}
-.work .fr{color:var(--rose)}
-.menu{max-width:720px;margin:34px auto 0;background:var(--card);border:4px double var(--gold);padding:38px 34px;box-shadow:0 10px 30px rgba(20,32,61,.12)}
-.mh{text-align:center}.mh h3{font-size:2.1rem}.mh p{margin:4px 0 0;color:var(--muted);font-style:italic}
-.menu h4{font:800 1.3rem Fraunces,serif;margin:30px 0 14px;display:flex;align-items:baseline;gap:10px;border-bottom:2px solid var(--gold);padding-bottom:4px}
-.menu h4 em{font:italic 500 1rem Fraunces,serif;color:var(--rose)}
-.dish{margin-bottom:20px}
-.dn{display:flex;align-items:baseline;gap:8px;font:800 1.2rem Fraunces,serif}
-.dn i{flex:1;min-width:20px;border-bottom:2px dotted var(--muted);transform:translateY(-4px)}
-.pr{font:600 .85rem Hind,sans-serif;color:var(--blue);text-align:right}
-.dish p{margin:2px 0 4px;color:var(--muted)}
-.dish a{font-weight:600;color:var(--blue)}
-.sp{background:var(--rose);color:#fff;font:600 .7rem Hind,sans-serif;padding:0 8px;border-radius:8px;vertical-align:middle}
-.chef{text-align:center;font-style:italic;color:var(--muted);margin:28px 0 0}
-@media(prefers-color-scheme:dark){.pr,.dish a{color:var(--gold)}}
-@media(max-width:760px){.menu{padding:28px 20px}.dn{flex-wrap:wrap}.dn i{display:none}.pr{text-align:left;width:100%}}
-/* behind the scenes */
-.back{background:#16224a;padding:100px 0;clip-path:polygon(0 4%,100% 0,100% 100%,0 100%);margin-top:-30px}
-.cols{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:28px;margin-top:30px}
-pre{margin:0;background:#080e24;border-radius:14px;padding:20px;color:#8ff0c0;font:500 .95rem/1.7 ui-monospace,Menlo,monospace;overflow-x:auto}
-pre i{color:#8ea2ff;font-style:normal}
-.clubs{margin:0;padding:0;list-style:none}
-.clubs li{padding:14px 0;border-bottom:1px solid #2c3b6e}.clubs strong{color:var(--gold)}
-/* postcard */
-.contact{background:var(--post-bg);color:var(--ink);padding:90px 0 70px}
-.contact .fr{color:var(--rose)}
-.card{position:relative;background:var(--paper);color:var(--paper-ink);border-radius:6px;padding:34px;max-width:680px;margin:34px auto 0;transform:rotate(-1deg);box-shadow:0 14px 34px rgba(20,32,61,.25);display:grid;grid-template-columns:1.4fr 1fr;gap:26px}
-.card::before{content:"";position:absolute;top:14px;bottom:14px;left:58.5%;border-left:2px solid rgba(0,0,0,.2)}
-.card p{margin:0 0 10px}
-.addr{padding-top:50px}
-.addr div{border-bottom:1px solid rgba(0,0,0,.3);height:28px;font-size:.95rem}
-.stamp{position:absolute;top:16px;right:16px;border:2px dashed var(--rose);padding:6px 10px;font:800 .8rem Fraunces;color:var(--rose);transform:rotate(4deg);text-align:center;line-height:1.2}
-.pm{position:absolute;top:18px;right:100px;width:64px;height:64px;border:2px solid rgba(0,0,0,.4);border-radius:50%;font-size:.6rem;text-align:center;padding-top:20px;line-height:1.2;transform:rotate(-12deg);opacity:.7}
-.card a{color:var(--blue);font-weight:600;margin-right:14px}
-.card .social-icons{display:flex;align-items:center;gap:16px;margin-top:18px}
-.card .social-icons a{display:inline-flex;align-items:center;justify-content:center;width:36px;height:36px;margin:0;border:1px solid currentColor;border-radius:50%;transition:transform .2s,background .2s}
-.card .social-icons a:hover{transform:translateY(-3px);background:rgba(100,80,160,.12)}
-.card .social-icons svg{width:19px;height:19px;fill:currentColor}
-.card .addr .email-cta{display:inline-flex;align-items:center;gap:6px;border:0;text-decoration:none;font-weight:700}
-.card .addr .email-cta:hover{text-decoration:underline}
-@media(prefers-color-scheme:dark){.card a{color:var(--gold)}}
-/* game */
-.egg{position:fixed;right:14px;bottom:calc(14px + env(safe-area-inset-bottom,0px));font-size:1.4rem;width:46px;height:46px;border-radius:50%;border:2px solid var(--gold);background:var(--night);z-index:20;opacity:.85}
-dialog{border:3px solid var(--gold);border-radius:18px;background:var(--night);color:#fff;max-width:420px;width:calc(100% - 32px);padding:26px;text-align:center}
-dialog::backdrop{background:rgba(5,8,20,.75)}
-dialog input{font:inherit;padding:10px 16px;border-radius:999px;border:2px solid var(--gold);width:100%;margin:14px 0;text-align:center;background:#fff;color:#000}
-#msg{min-height:3.4em;font-weight:600;color:var(--gold)}
-@media(max-width:760px){.hero .wrap{grid-template-columns:1fr}.tower{max-height:34vh}.train{--s:.62}.st{font-size:.75rem;padding:1px 7px}.board{font-size:.68rem}.card{grid-template-columns:1fr}.card::before,.pm{display:none}.addr{padding-top:0}.btn.alt{margin:10px 0 0}}
-@media(prefers-reduced-motion:reduce){.stars,.tower circle,.scene.go::before{animation:none!important}.tower path,.tower line{animation:none!important;stroke-dashoffset:0}.tower circle{opacity:1}.rv{opacity:1!important;transform:none!important;transition:none}.typed{clip-path:none!important}.js .card{opacity:1!important;transform:rotate(-1deg)!important;transition:none}.hint{animation:none}html{scroll-behavior:auto}}
+/* ==========================================================
+   1. THEME VARIABLES
+   ========================================================== */
+:root {
+  --night: #0d1633;
+  --dusk: #2b2a6b;
+  --gold: #e8b04a;
+  --rose: #d9487b;
+  --blue: #1f3fae;
+  --tunnel: #0a1330;
+  --light: #f4f6fb;
+  --ink: #14203d;
+  --card: #fff;
+  --muted: #5a6578;
+  --post-bg: #dfe6f5;
+  --paper: #fffdf6;
+  --paper-ink: #2a2418;
+ 
+  box-sizing: border-box;
+  padding-top: env(safe-area-inset-top, 0px);
+  padding-bottom: env(safe-area-inset-bottom, 0px);
+}
+ 
+/* Dark mode: follows the system unless the user forced light */
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --light: #111a30;
+    --ink: #e8edf6;
+    --card: #1a2542;
+    --muted: #9aa8c0;
+    --post-bg: #0f1830;
+    --paper: #232018;
+    --paper-ink: #f0e8d0;
+    color-scheme: dark;
+  }
+}
+ 
+/* Dark mode: forced */
+:root[data-theme="dark"] {
+  --light: #111a30;
+  --ink: #e8edf6;
+  --card: #1a2542;
+  --muted: #9aa8c0;
+  --post-bg: #0f1830;
+  --paper: #232018;
+  --paper-ink: #f0e8d0;
+  color-scheme: dark;
+}
+ 
+/* ==========================================================
+   2. BASE STYLES
+   ========================================================== */
+html {
+  height: 100%;
+  scroll-padding-top: env(safe-area-inset-top, 0px);
+  scroll-behavior: smooth;
+}
+ 
+*, *::before, *::after { box-sizing: inherit; }
+ 
+body {
+  margin: 0;
+  font: 400 17px/1.65 Hind, system-ui, sans-serif;
+  background: var(--night);
+  color: #fff;
+  overflow-x: hidden;
+}
+ 
+h1, h2, h3 {
+  font-family: Fraunces, Georgia, serif;
+  margin: 0;
+  line-height: 1.08;
+}
+ 
+h2 {
+  font-weight: 800;
+  font-size: clamp(2rem, 5.5vw, 3.1rem);
+}
+ 
+/* French subtitle under headings */
+.fr {
+  font: italic 500 1.05rem Fraunces, serif;
+  color: var(--gold);
+  display: block;
+  margin-top: 6px;
+}
+ 
+a { color: inherit; }
+button { font: inherit; cursor: pointer; }
+:focus-visible { outline: 3px solid var(--gold); outline-offset: 3px; }
+ 
+.wrap {
+  max-width: 980px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+ 
+/* Sections that sit above the hero's absolutely-positioned layers */
+.hero { position: relative; }
+.metro, .work, .back, .contact { position: relative; z-index: 1; }
+ 
+/* ==========================================================
+   3. HERO
+   ========================================================== */
+.hero {
+  min-height: 100vh;
+  min-height: 100svh;
+  background: linear-gradient(180deg, var(--night), var(--dusk) 60%, #8a3d7a 115%);
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+}
+ 
+/* Twinkling star field */
+.stars {
+  position: absolute;
+  inset: 0;
+  background-image:
+    radial-gradient(1.6px 1.6px at 20px 30px, #fff, transparent),
+    radial-gradient(1.2px 1.2px at 90px 80px, #fff, transparent),
+    radial-gradient(1.6px 1.6px at 150px 20px, #fff, transparent),
+    radial-gradient(1px 1px at 60px 120px, #fff, transparent);
+  background-size: 190px 160px;
+  animation: twinkle 5s infinite alternate;
+}
+@keyframes twinkle { to { opacity: .35; } }
+ 
+/* Top navigation */
+nav {
+  position: absolute;
+  top: calc(env(safe-area-inset-top, 0px) + 18px);
+  left: 0;
+  right: 0;
+  z-index: 3;
+}
+nav .wrap {
+  display: flex;
+  justify-content: space-between;
+  font-weight: 500;
+}
+nav a { text-decoration: none; margin-left: 22px; }
+nav a:first-child { margin: 0; font-family: Fraunces; font-weight: 800; }
+ 
+/* Hero layout: text on the left, tower on the right */
+.hero .wrap {
+  position: relative;
+  z-index: 2;
+  display: grid;
+  grid-template-columns: 1.25fr .75fr;
+  gap: 20px;
+  align-items: center;
+  width: 100%;
+  padding-top: 70px;
+}
+ 
+.hello { color: var(--gold); font-weight: 600; margin: 0; }
+ 
+h1 {
+  font-weight: 800;
+  font-size: clamp(2.8rem, 8.5vw, 5.6rem);
+  letter-spacing: -.03em;
+  margin: 10px 0 18px;
+}
+ 
+.lede {
+  font-size: 1.2rem;
+  max-width: 31em;
+  opacity: .9;
+  margin: 0 0 28px;
+}
+ 
+/* Buttons */
+.btn {
+  display: inline-block;
+  background: var(--gold);
+  color: #241a05;
+  padding: 13px 26px;
+  border-radius: 999px;
+  font-weight: 600;
+  text-decoration: none;
+  border: 0;
+}
+.btn.alt {
+  background: transparent;
+  color: #fff;
+  border: 2px solid #fff;
+  margin-left: 10px;
+}
+ 
+/* Eiffel Tower line-art that "draws itself" */
+.tower {
+  width: 100%;
+  max-height: 76vh;
+  cursor: pointer;
+  will-change: transform;
+}
+.tower path,
+.tower line {
+  fill: none;
+  stroke: var(--gold);
+  stroke-width: 2.6;
+  stroke-linecap: round;
+  stroke-dasharray: 1200;
+  stroke-dashoffset: 1200;
+  animation: draw 3s .3s forwards;
+}
+@keyframes draw { to { stroke-dashoffset: 0; } }
+ 
+.tower circle {
+  fill: #fff;
+  opacity: 0;
+  animation: twinkle 1.3s 3s infinite alternate;
+}
+ 
+/* Rooftop silhouette at the bottom of the hero */
+.roofs {
+  position: absolute;
+  bottom: -1px;
+  left: 0;
+  right: 0;
+  height: 64px;
+  background: var(--tunnel);
+  clip-path: polygon(0 65%, 7% 35%, 13% 65%, 20% 25%, 28% 65%, 36% 40%, 44% 65%, 52% 20%, 60% 65%, 68% 35%, 76% 65%, 84% 30%, 92% 65%, 100% 45%, 100% 100%, 0 100%);
+}
+ 
+/* "Scroll to board the metro" hint */
+.hint {
+  position: absolute;
+  bottom: 150px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 3;
+  color: var(--gold);
+  text-decoration: none;
+  font-weight: 600;
+  font-size: .95rem;
+  animation: bob-hint 2s ease-in-out infinite alternate;
+}
+@keyframes bob-hint { to { transform: translate(-50%, 8px); } }
+ 
+/* Metro-entrance arch at the bottom of the hero */
+.arch {
+  position: absolute;
+  bottom: -1px;
+  left: 0;
+  right: 0;
+  height: 60px;
+  background: var(--tunnel);
+}
+.arch svg {
+  position: absolute;
+  bottom: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: min(460px, 92%);
+  height: auto;
+  display: block;
+}
+ 
+/* ==========================================================
+   4. METRO JOURNEY (timeline)
+   ========================================================== */
+.metro {
+  background: var(--tunnel);
+  padding: 60px 0 90px;
+}
+ 
+/* The tunnel scene. --px and --pw are set from JS for parallax. */
+.scene {
+  position: relative;
+  height: 290px;
+  margin-top: 34px;
+  border-radius: 20px;
+  overflow: hidden;
+  border: 1px solid #2c4170;
+  box-shadow: 0 20px 50px rgba(0,0,0,.45), inset 0 0 80px rgba(0,0,0,.5);
+  background:
+    repeating-linear-gradient(0deg, rgba(255,255,255,.07) 0 1px, transparent 1px 34px),
+    repeating-linear-gradient(90deg, rgba(255,255,255,.07) 0 1px, transparent 1px 68px) var(--pw, 0) 0,
+    linear-gradient(180deg, #0b1d3f, #14345f 60%, #0b1a3a);
+}
+ 
+/* Ceiling lamps */
+.scene::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  height: 60px;
+  background: radial-gradient(circle, #fff1c2 0 3px, rgba(255,214,120,.4) 4px 13px, transparent 16px) var(--px, 0) 18px / 160px 40px repeat-x;
+  z-index: 0;
+}
+ 
+/* Light beams under the lamps */
+.scene::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 70px;
+  background: repeating-linear-gradient(90deg, rgba(232,176,74,.22) 0 2px, transparent 2px 160px) var(--px, 0) 0;
+  -webkit-mask-image: linear-gradient(#000, transparent 70%);
+  mask-image: linear-gradient(#000, transparent 70%);
+  pointer-events: none;
+  z-index: 0;
+}
+ 
+.rail {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 70px;
+  height: 6px;
+  background: linear-gradient(#aab3c9, #5b6684);
+}
+ 
+.plat {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 70px;
+  background: linear-gradient(#1f2f5c, #0d1634);
+  border-top: 3px solid var(--gold);
+}
+ 
+/* Station buttons (one per milestone) */
+.st {
+  position: absolute;
+  bottom: 16px;
+  transform: translateX(-50%);
+  background: #16379a;
+  color: #fff;
+  border: 2px solid #f4f1e8;
+  outline: 1px solid var(--gold);
+  outline-offset: 2px;
+  border-radius: 5px;
+  padding: 2px 14px;
+  font: 600 .95rem Hind;
+  letter-spacing: .04em;
+  z-index: 3;
+}
+.st[aria-current="true"] { background: var(--gold); color: #241a05; }
+ 
+/* The train */
+.train {
+  position: absolute;
+  left: 0;
+  bottom: 76px;
+  width: 240px;
+  display: flex;
+  gap: 3px;
+  transform-origin: center bottom;
+  will-change: transform;
+  z-index: 2;
+}
+ 
+/* Headlight beam */
+.train::after {
+  content: "";
+  position: absolute;
+  left: 100%;
+  bottom: 22px;
+  width: 150px;
+  height: 46px;
+  background: linear-gradient(90deg, rgba(255,236,160,.35), transparent);
+  clip-path: polygon(0 40%, 100% 0, 100% 100%, 0 60%);
+  pointer-events: none;
+}
+ 
+.car {
+  position: relative;
+  flex: 1;
+  height: 64px;
+  background: linear-gradient(180deg, #f6f7fb, #cfd5e2 70%);
+  border-radius: 12px 12px 4px 4px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 0 6px;
+  border-bottom: 12px solid #17306e;
+  box-shadow: inset 0 -3px 0 var(--gold);
+}
+.car:last-child { border-radius: 12px 40px 4px 4px; }
+ 
+/* Headlight bulb on the front car */
+.car:last-child::before {
+  content: "";
+  position: absolute;
+  right: -3px;
+  top: 38px;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #fff6c8;
+  box-shadow: 0 0 16px 7px rgba(255,236,150,.75);
+}
+ 
+/* Wheels */
+.car::after {
+  content: "";
+  position: absolute;
+  bottom: -18px;
+  left: 12px;
+  width: 13px;
+  height: 13px;
+  border-radius: 50%;
+  background: #1a1d2b;
+  box-shadow: 42px 0 #1a1d2b;
+}
+ 
+/* Windows */
+.w {
+  width: 15px;
+  height: 24px;
+  border-radius: 9px 9px 3px 3px;
+  background: linear-gradient(#ffeab0, #d6a94d);
+  box-shadow: 0 0 10px rgba(255,214,120,.55);
+}
+ 
+/* Doors: two panels that slide apart when the train stops */
+.dr {
+  display: flex;
+  width: 20px;
+  height: 44px;
+  gap: 1px;
+  overflow: hidden;
+  background: linear-gradient(#ffeab0, #d6a94d);
+  margin-top: 6px;
+  border-radius: 4px 4px 0 0;
+}
+.dr b {
+  flex: 1;
+  background: #17306e;
+  transition: transform 1s cubic-bezier(.5, 0, .2, 1);
+  border-top: 3px solid var(--gold);
+}
+.train.stop .dr b:first-child { transform: translateX(-100%); }
+.train.stop .dr b:last-child  { transform: translateX(100%); }
+ 
+/* "Doors open" badge above the train */
+.badge {
+  position: absolute;
+  top: -30px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: var(--gold);
+  color: #241a05;
+  font: 600 .75rem Hind;
+  padding: 0 12px;
+  border-radius: 8px;
+  white-space: nowrap;
+  opacity: 0;
+  transition: opacity .5s;
+}
+.train.stop .badge { opacity: 1; }
+ 
+/* Departure board */
+.board {
+  position: absolute;
+  top: 74px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 3;
+  background: #050814;
+  border: 2px solid #3a4a86;
+  border-radius: 8px;
+  padding: 4px 16px;
+  font: 600 .9rem ui-monospace, Menlo, monospace;
+  color: #ffb347;
+  white-space: nowrap;
+  max-width: 94%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+ 
+/* Info card for the current milestone */
+.info {
+  background: var(--card);
+  color: var(--ink);
+  border-radius: 16px;
+  padding: 22px 28px;
+  margin-top: 24px;
+  min-height: 140px;
+  border-left: 6px solid var(--gold);
+}
+.info b { font: 800 2.2rem Fraunces; color: var(--blue); }
+.info h3 { font-size: 1.4rem; margin: 2px 0 6px; }
+.info p { margin: 0; color: var(--muted); }
+@media (prefers-color-scheme: dark) { .info b { color: var(--gold); } }
+ 
+/* Pause / Play button */
+.ctl {
+  margin-top: 18px;
+  background: none;
+  border: 2px solid #fff;
+  color: #fff;
+  border-radius: 999px;
+  padding: 5px 18px;
+}
+ 
+/* "SORTIE · EXIT" tiled wall between the metro and the projects */
+.tiles {
+  position: relative;
+  z-index: 1;
+  height: 86px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #f6f8fc;
+  background-image:
+    linear-gradient(#c9d1e2 1px, transparent 1px),
+    linear-gradient(90deg, #c9d1e2 1px, transparent 1px);
+  background-size: 44px 22px;
+  box-shadow: inset 0 26px 28px -14px rgba(0,0,0,.45);
+}
+.tiles span {
+  background: #16379a;
+  color: #fff;
+  font: 600 1rem Hind, sans-serif;
+  letter-spacing: .14em;
+  padding: 6px 22px;
+  border: 3px solid #fff;
+  outline: 2px solid var(--gold);
+  border-radius: 6px;
+}
+ 
+/* ==========================================================
+   5. PROJECTS ("The Menu")
+   ========================================================== */
+.work {
+  background: var(--light);
+  color: var(--ink);
+  padding: 90px 0;
+}
+.work .fr { color: var(--rose); }
+ 
+.menu {
+  max-width: 720px;
+  margin: 34px auto 0;
+  background: var(--card);
+  border: 4px double var(--gold);
+  padding: 38px 34px;
+  box-shadow: 0 10px 30px rgba(20,32,61,.12);
+}
+ 
+.mh { text-align: center; }
+.mh h3 { font-size: 2.1rem; }
+.mh p { margin: 4px 0 0; color: var(--muted); font-style: italic; }
+ 
+/* Course headings: Starters / Mains / Dessert */
+.menu h4 {
+  font: 800 1.3rem Fraunces, serif;
+  margin: 30px 0 14px;
+  display: flex;
+  align-items: baseline;
+  gap: 10px;
+  border-bottom: 2px solid var(--gold);
+  padding-bottom: 4px;
+}
+.menu h4 em { font: italic 500 1rem Fraunces, serif; color: var(--rose); }
+ 
+/* One project = one dish */
+.dish { margin-bottom: 20px; }
+.dn {
+  display: flex;
+  align-items: baseline;
+  gap: 8px;
+  font: 800 1.2rem Fraunces, serif;
+}
+.dn i {                      /* dotted leader line, like a real menu */
+  flex: 1;
+  min-width: 20px;
+  border-bottom: 2px dotted var(--muted);
+  transform: translateY(-4px);
+}
+.pr { font: 600 .85rem Hind, sans-serif; color: var(--blue); text-align: right; }
+.dish p { margin: 2px 0 4px; color: var(--muted); }
+.dish a { font-weight: 600; color: var(--blue); }
+ 
+.sp {                        /* small "Backend" tag */
+  background: var(--rose);
+  color: #fff;
+  font: 600 .7rem Hind, sans-serif;
+  padding: 0 8px;
+  border-radius: 8px;
+  vertical-align: middle;
+}
+ 
+.chef {
+  text-align: center;
+  font-style: italic;
+  color: var(--muted);
+  margin: 28px 0 0;
+}
+ 
+@media (prefers-color-scheme: dark) { .pr, .dish a { color: var(--gold); } }
+ 
+/* ==========================================================
+   6. BEHIND THE SCENES (skills + clubs)
+   ========================================================== */
+.back {
+  background: #16224a;
+  padding: 100px 0;
+  clip-path: polygon(0 4%, 100% 0, 100% 100%, 0 100%);
+  margin-top: -30px;
+}
+ 
+.cols {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 28px;
+  margin-top: 30px;
+}
+ 
+pre {
+  margin: 0;
+  background: #080e24;
+  border-radius: 14px;
+  padding: 20px;
+  color: #8ff0c0;
+  font: 500 .95rem/1.7 ui-monospace, Menlo, monospace;
+  overflow-x: auto;
+}
+pre i { color: #8ea2ff; font-style: normal; }
+ 
+.clubs { margin: 0; padding: 0; list-style: none; }
+.clubs li { padding: 14px 0; border-bottom: 1px solid #2c3b6e; }
+.clubs strong { color: var(--gold); }
+ 
+/* ==========================================================
+   7. CONTACT ("Postcard")
+   ========================================================== */
+.contact {
+  background: var(--post-bg);
+  color: var(--ink);
+  padding: 90px 0 70px;
+  overflow: hidden;
+}
+.contact .fr { color: var(--rose); }
+ 
+/* Scalloped edge at the top */
+.contact::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 11px;
+  background: radial-gradient(circle at 10px 0, #16224a 7px, transparent 7.5px) 0 0 / 20px 11px repeat-x;
+}
+ 
+.card {
+  position: relative;
+  background: var(--paper);
+  color: var(--paper-ink);
+  border-radius: 6px;
+  padding: 34px;
+  max-width: 680px;
+  margin: 34px auto 0;
+  transform: rotate(-1deg);
+  box-shadow: 0 14px 34px rgba(20,32,61,.25);
+  display: grid;
+  grid-template-columns: 1.4fr 1fr;
+  gap: 26px;
+}
+ 
+/* Vertical divider line, like a real postcard */
+.card::before {
+  content: "";
+  position: absolute;
+  top: 14px;
+  bottom: 14px;
+  left: 58.5%;
+  border-left: 2px solid rgba(0,0,0,.2);
+}
+.card p { margin: 0 0 10px; }
+ 
+.addr { padding-top: 50px; }
+.addr div { border-bottom: 1px solid rgba(0,0,0,.3); height: 28px; font-size: .95rem; }
+ 
+.stamp {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  border: 2px dashed var(--rose);
+  padding: 6px 10px;
+  font: 800 .8rem Fraunces;
+  color: var(--rose);
+  transform: rotate(4deg);
+  text-align: center;
+  line-height: 1.2;
+}
+ 
+/* Round postmark */
+.pm {
+  position: absolute;
+  top: 18px;
+  right: 100px;
+  width: 64px;
+  height: 64px;
+  border: 2px solid rgba(0,0,0,.4);
+  border-radius: 50%;
+  font-size: .6rem;
+  text-align: center;
+  padding-top: 20px;
+  line-height: 1.2;
+  transform: rotate(-12deg);
+  opacity: .7;
+}
+ 
+.card a { color: var(--blue); font-weight: 600; margin-right: 14px; }
+ 
+/* Social icon row */
+.card .social-icons {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-top: 18px;
+}
+.card .social-icons a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  margin: 0;
+  border: 1px solid currentColor;
+  border-radius: 50%;
+  transition: transform .2s, background .2s;
+}
+.card .social-icons a:hover {
+  transform: translateY(-3px);
+  background: rgba(100,80,160,.12);
+}
+.card .social-icons svg { width: 19px; height: 19px; fill: currentColor; }
+ 
+.card .addr .email-cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  border: 0;
+  text-decoration: none;
+  font-weight: 700;
+}
+.card .addr .email-cta:hover { text-decoration: underline; }
+ 
+@media (prefers-color-scheme: dark) { .card a { color: var(--gold); } }
+ 
+/* ==========================================================
+   8. SECRET GAME (croissant button + dialog)
+   ========================================================== */
+.egg {
+  position: fixed;
+  right: 14px;
+  bottom: calc(14px + env(safe-area-inset-bottom, 0px));
+  font-size: 1.4rem;
+  width: 46px;
+  height: 46px;
+  border-radius: 50%;
+  border: 2px solid var(--gold);
+  background: var(--night);
+  z-index: 20;
+  opacity: .85;
+}
+ 
+dialog {
+  border: 3px solid var(--gold);
+  border-radius: 18px;
+  background: var(--night);
+  color: #fff;
+  max-width: 420px;
+  width: calc(100% - 32px);
+  padding: 26px;
+  text-align: center;
+}
+dialog::backdrop { background: rgba(5,8,20,.75); }
+dialog input {
+  font: inherit;
+  padding: 10px 16px;
+  border-radius: 999px;
+  border: 2px solid var(--gold);
+  width: 100%;
+  margin: 14px 0;
+  text-align: center;
+  background: #fff;
+  color: #000;
+}
+#msg { min-height: 3.4em; font-weight: 600; color: var(--gold); }
+ 
+/* ==========================================================
+   9. SCROLL-REVEAL ANIMATIONS (only when JS is on)
+   ========================================================== */
+.js .rv {
+  opacity: 0;
+  transform: translateY(16px);
+  transition: opacity .7s, transform .7s;
+}
+.js .rv.in { opacity: 1; transform: none; }
+ 
+/* Typewriter effect for the code block */
+.js .typed { clip-path: inset(0 100% 0 0); }
+.js .typed.in {
+  clip-path: inset(0);
+  transition: clip-path 2s steps(34);
+}
+ 
+/* Postcard flies in, then the stamp "lands" on it */
+.js .card {
+  opacity: 0;
+  transform: translate(60%, 40px) rotate(14deg);
+  transition: transform 1.2s cubic-bezier(.2, .9, .25, 1.08), opacity .6s;
+}
+.js .card.in { opacity: 1; transform: rotate(-1deg); }
+.card.in .stamp { animation: stamp-in .5s 1.1s both; }
+@keyframes stamp-in {
+  from { transform: scale(2.6) rotate(-12deg); opacity: 0; }
+  to   { transform: rotate(4deg); opacity: 1; }
+}
+ 
+/* ==========================================================
+   10. RESPONSIVE (phones)
+   ========================================================== */
+@media (max-width: 760px) {
+  .hero .wrap { grid-template-columns: 1fr; }
+  .tower { max-height: 34vh; }
+  .train { --s: .62; }
+  .st { font-size: .75rem; padding: 1px 7px; }
+  .board { font-size: .68rem; }
+  .card { grid-template-columns: 1fr; }
+  .card::before, .pm { display: none; }
+  .addr { padding-top: 0; }
+  .btn.alt { margin: 10px 0 0; }
+ 
+  .menu { padding: 28px 20px; }
+  .dn { flex-wrap: wrap; }
+  .dn i { display: none; }
+  .pr { text-align: left; width: 100%; }
+}
+ 
+/* ==========================================================
+   11. REDUCED MOTION (accessibility)
+   ========================================================== */
+@media (prefers-reduced-motion: reduce) {
+  .stars, .tower circle, .scene.go::before { animation: none !important; }
+  .tower path, .tower line { animation: none !important; stroke-dashoffset: 0; }
+  .tower circle { opacity: 1; }
+  .rv { opacity: 1 !important; transform: none !important; transition: none; }
+  .typed { clip-path: none !important; }
+  .js .card { opacity: 1 !important; transform: rotate(-1deg) !important; transition: none; }
+  .hint { animation: none; }
+  html { scroll-behavior: auto; }
+}
 </style>
 </head>
+ 
 <body>
+ 
+<!-- ==========================================================
+     HERO
+     ========================================================== -->
 <header class="hero" id="top">
-<div class="stars"></div>
-<nav aria-label="Main"><div class="wrap"><a href="#top">Bhumi Aggarwal</a><span><a href="#journey">Journey</a><a href="#work">Work</a><a href="#about">Skills</a><a href="#contact">Contact</a></span></div></nav>
-<div class="wrap">
-<div>
-<p class="hello">Bonjuste · my own word for hello: a little bonjour, a little namaste</p>
-<h1>Bonjuste, <br>I’m Bhumi Aggarwal.</h1>
-<p class="lede">Backend developer from Delhi, Paris in spirit. I build reliable APIs and systems, lead college clubs, and learn French for fun. I’m looking for my first backend role.<span class="fr">Je construis des backends, et j’apprends le français.</span></p>
-<a class="btn" href="#journey">See my journey</a><a class="btn alt" href="#contact">Contact me</a>
-</div>
-<svg class="tower" id="tower" viewBox="0 -30 200 430" role="img" aria-label="Eiffel Tower. Click for a small surprise.">
-<path d="M100 -20V10L108 80L120 140L140 220L175 390H150L132 330Q100 300 68 330L50 390H25L60 220L80 140L92 80L100 10"/>
-<line x1="90" y1="100" x2="110" y2="100"/><line x1="72" y1="150" x2="128" y2="150"/><line x1="52" y1="225" x2="148" y2="225"/>
-<path d="M72 150L128 225M128 150L72 225M60 225L138 330M140 225L62 330"/>
-<circle cx="100" cy="-20" r="4"/><circle cx="92" cy="100" r="3"/><circle cx="108" cy="100" r="3"/><circle cx="74" cy="150" r="3"/><circle cx="126" cy="150" r="3"/>
-</svg>
-</div>
-<a class="hint" href="#journey">Scroll to board the metro ↓</a>
-<div class="arch" aria-hidden="true"><svg viewBox="0 0 440 70"><path d="M0 70Q30 70 48 46Q220 -26 392 46Q410 70 440 70Z" fill="#0a1330"/><path d="M165 70V58Q165 44 220 44Q275 44 275 58V70" fill="#e8b04a" fill-opacity=".18" stroke="#e8b04a" stroke-width="2.5"/><circle cx="220" cy="28" r="12" fill="#fff" stroke="#e8b04a" stroke-width="3"/><text x="220" y="33" text-anchor="middle" font-family="Fraunces,serif" font-weight="800" font-size="14" fill="#0a1330">M</text></svg></div>
+  <div class="stars"></div>
+ 
+  <nav aria-label="Main">
+    <div class="wrap">
+      <a href="#top">Bhumi Aggarwal</a>
+      <span>
+        <a href="#journey">Journey</a>
+        <a href="#work">Work</a>
+        <a href="#about">Skills</a>
+        <a href="#contact">Contact</a>
+      </span>
+    </div>
+  </nav>
+ 
+  <div class="wrap">
+    <div>
+      <p class="hello">Bonjuste · my own word for hello: a little bonjour, a little namaste</p>
+      <h1>Bonjuste, <br>I’m Bhumi Aggarwal.</h1>
+      <p class="lede">
+        Backend developer from Delhi, Paris in spirit. I build reliable APIs and systems, lead college clubs, and learn French for fun. I’m looking for my first backend role.
+        <span class="fr">Je construis des backends, et j’apprends le français.</span>
+      </p>
+      <a class="btn" href="#journey">See my journey</a>
+      <a class="btn alt" href="#contact">Contact me</a>
+    </div>
+ 
+    <!-- Eiffel Tower line-art (click it to open the secret game) -->
+    <svg class="tower" id="tower" viewBox="0 -30 200 430" role="img" aria-label="Eiffel Tower. Click for a small surprise.">
+      <path d="M100 -20V10L108 80L120 140L140 220L175 390H150L132 330Q100 300 68 330L50 390H25L60 220L80 140L92 80L100 10"/>
+      <line x1="90" y1="100" x2="110" y2="100"/>
+      <line x1="72" y1="150" x2="128" y2="150"/>
+      <line x1="52" y1="225" x2="148" y2="225"/>
+      <path d="M72 150L128 225M128 150L72 225M60 225L138 330M140 225L62 330"/>
+      <circle cx="100" cy="-20" r="4"/>
+      <circle cx="92" cy="100" r="3"/>
+      <circle cx="108" cy="100" r="3"/>
+      <circle cx="74" cy="150" r="3"/>
+      <circle cx="126" cy="150" r="3"/>
+    </svg>
+  </div>
+ 
+  <a class="hint" href="#journey">Scroll to board the metro ↓</a>
+ 
+  <!-- Metro entrance sign -->
+  <div class="arch" aria-hidden="true">
+    <svg viewBox="0 0 440 70">
+      <path d="M0 70Q30 70 48 46Q220 -26 392 46Q410 70 440 70Z" fill="#0a1330"/>
+      <path d="M165 70V58Q165 44 220 44Q275 44 275 58V70" fill="#e8b04a" fill-opacity=".18" stroke="#e8b04a" stroke-width="2.5"/>
+      <circle cx="220" cy="28" r="12" fill="#fff" stroke="#e8b04a" stroke-width="3"/>
+      <text x="220" y="33" text-anchor="middle" font-family="Fraunces,serif" font-weight="800" font-size="14" fill="#0a1330">M</text>
+    </svg>
+  </div>
 </header>
-
+ 
+<!-- ==========================================================
+     JOURNEY (animated metro timeline)
+     ========================================================== -->
 <section class="metro" id="journey" aria-labelledby="mh">
-<div class="wrap">
-<h2 id="mh">My journey<span class="fr">Le voyage — each station is a milestone</span></h2>
-<div class="scene" id="scene">
-<div class="rail"></div><div class="plat"></div><div class="board" id="board" aria-live="polite">Boarding…</div>
-<div class="train" id="train" aria-hidden="true"><span class="badge">Doors open · Ouverture des portes</span>
-<div class="car"><i class="w"></i><i class="dr"><b></b><b></b></i><i class="w"></i></div>
-<div class="car"><i class="w"></i><i class="dr"><b></b><b></b></i><i class="w"></i></div>
-<div class="car"><i class="w"></i><i class="dr"><b></b><b></b></i><i class="w"></i></div></div>
-</div>
-<div class="info" id="info" aria-live="polite"></div>
-<button class="ctl" id="pp">Pause</button>
-</div>
+  <div class="wrap">
+    <h2 id="mh">My journey<span class="fr">Le voyage — each station is a milestone</span></h2>
+ 
+    <div class="scene" id="scene">
+      <div class="rail"></div>
+      <div class="plat"></div>
+      <div class="board" id="board" aria-live="polite">Boarding…</div>
+ 
+      <div class="train" id="train" aria-hidden="true">
+        <span class="badge">Doors open · Ouverture des portes</span>
+        <!-- 3 train cars: window, doors, window -->
+        <div class="car"><i class="w"></i><i class="dr"><b></b><b></b></i><i class="w"></i></div>
+        <div class="car"><i class="w"></i><i class="dr"><b></b><b></b></i><i class="w"></i></div>
+        <div class="car"><i class="w"></i><i class="dr"><b></b><b></b></i><i class="w"></i></div>
+      </div>
+      <!-- Station buttons are added here by JavaScript -->
+    </div>
+ 
+    <div class="info" id="info" aria-live="polite"></div>
+    <button class="ctl" id="pp">Pause</button>
+  </div>
 </section>
+ 
 <div class="tiles" aria-hidden="true"><span>SORTIE · EXIT →</span></div>
-
+ 
+<!-- ==========================================================
+     PROJECTS
+     ========================================================== -->
 <section class="work" id="work" aria-labelledby="wh">
-<div class="wrap">
-<h2 id="wh">The Menu<span class="fr">La carte — my projects, served fresh</span></h2>
-<div class="menu">
-<div class="mh rv"><h3>Bhumi’s Kitchen</h3><p>Small builds, real learning — cooked one project at a time</p></div>
-<h4 class="rv">Starters <em>Entrées</em></h4>
-<div class="dish rv"><div class="dn"><span>Bill Generator App</span><i></i><span class="pr">Java · Console</span></div><p>A console-based billing app for building a bill with custom extras — because even a little cheese deserves to be counted.</p><a href="https://github.com/CurlyBracket11/Bill-Generator-App" target="_blank" rel="noopener noreferrer">Taste the code →</a></div>
-<h4 class="rv">Mains <em>Plats principaux</em></h4>
-<div class="dish rv"><div class="dn"><span>Student Management API <span class="sp">Backend</span></span><i></i><span class="pr">Java · Spring Boot · REST</span></div><p>My first Spring Boot REST API, with GET and POST operations tested using Postman. Small steps into backend development, one request at a time.</p><a href="https://github.com/CurlyBracket11/StudentManagement-SpringBoot" target="_blank" rel="noopener noreferrer">Taste the code →</a></div>
-<div class="dish rv"><div class="dn"><span>Chocorus</span><i></i><span class="pr">HTML · CSS · JavaScript</span></div><p>A chocolate storefront concept with product cards, a playful desi-inspired theme, and a little extra sweetness in the UI.</p><a href="https://github.com/CurlyBracket11/Chocorus" target="_blank" rel="noopener noreferrer">Taste the code →</a></div>
-<h4 class="rv">Dessert <em>Dessert</em></h4>
-<div class="dish rv"><div class="dn"><span>My Website</span><i></i><span class="pr">HTML · CSS · JavaScript</span></div><p>A small website project to practise bringing structure, styling, and interactivity together on the web.</p><a href="https://github.com/CurlyBracket11/my-website" target="_blank" rel="noopener noreferrer">Taste the code →</a></div>
-<p class="chef rv">Chef’s note: these are works in progress and learning milestones — more recipes are still in the making.</p>
-</div>
-</div>
+  <div class="wrap">
+    <h2 id="wh">The Menu<span class="fr">La carte — my projects, served fresh</span></h2>
+ 
+    <div class="menu">
+      <div class="mh rv">
+        <h3>Bhumi’s Kitchen</h3>
+        <p>Small builds, real learning — cooked one project at a time</p>
+      </div>
+ 
+      <!-- Starters -->
+      <h4 class="rv">Starters <em>Entrées</em></h4>
+      <div class="dish rv">
+        <div class="dn"><span>Bill Generator App</span><i></i><span class="pr">Java · Console</span></div>
+        <p>A console-based billing app for building a bill with custom extras — because even a little cheese deserves to be counted.</p>
+        <a href="https://github.com/CurlyBracket11/Bill-Generator-App" target="_blank" rel="noopener noreferrer">Taste the code →</a>
+      </div>
+ 
+      <!-- Mains -->
+      <h4 class="rv">Mains <em>Plats principaux</em></h4>
+      <div class="dish rv">
+        <div class="dn"><span>Student Management API <span class="sp">Backend</span></span><i></i><span class="pr">Java · Spring Boot · REST</span></div>
+        <p>My first Spring Boot REST API, with GET and POST operations tested using Postman. Small steps into backend development, one request at a time.</p>
+        <a href="https://github.com/CurlyBracket11/StudentManagement-SpringBoot" target="_blank" rel="noopener noreferrer">Taste the code →</a>
+      </div>
+      <div class="dish rv">
+        <div class="dn"><span>Chocorus</span><i></i><span class="pr">HTML · CSS · JavaScript</span></div>
+        <p>A chocolate storefront concept with product cards, a playful desi-inspired theme, and a little extra sweetness in the UI.</p>
+        <a href="https://github.com/CurlyBracket11/Chocorus" target="_blank" rel="noopener noreferrer">Taste the code →</a>
+      </div>
+ 
+      <!-- Dessert -->
+      <h4 class="rv">Dessert <em>Dessert</em></h4>
+      <div class="dish rv">
+        <div class="dn"><span>My Website</span><i></i><span class="pr">HTML · CSS · JavaScript</span></div>
+        <p>A small website project to practise bringing structure, styling, and interactivity together on the web.</p>
+        <a href="https://github.com/CurlyBracket11/my-website" target="_blank" rel="noopener noreferrer">Taste the code →</a>
+      </div>
+ 
+      <p class="chef rv">Chef’s note: these are works in progress and learning milestones — more recipes are still in the making.</p>
+    </div>
+  </div>
 </section>
-
+ 
+<!-- ==========================================================
+     SKILLS + CLUBS
+     ========================================================== -->
 <section class="back" id="about" aria-labelledby="bh">
-<div class="wrap">
-<h2 id="bh">Behind the scenes<span class="fr">En coulisses</span></h2>
-<div class="cols">
-<pre class="typed"><i>// tools I'm building with</i>
+  <div class="wrap">
+    <h2 id="bh">Behind the scenes<span class="fr">En coulisses</span></h2>
+ 
+    <div class="cols">
+      <pre class="typed"><i>// tools I'm building with</i>
 const stack = [
   "Java", "C",
   "SQL · MySQL", "HTML · CSS · JavaScript",
@@ -200,76 +1024,364 @@ const stack = [
   "AWS (currently learning)"
 ];
 <i>// learning by building ✔</i></pre>
-<ul class="clubs">
-<li><strong>FOSS Club, DTC · Co-Lead.</strong> Helping build an open-source community and bring tech events and hackathons to life.</li>
-<li><strong>Cultural Council.</strong> Coordinating people, creative teams, and campus events — because not everything runs in a terminal.</li>
-<li><strong>French, toujours.</strong> DELF A1 certified, with experience teaching French to beginners and school students.</li>
-</ul>
-</div>
-</div>
+ 
+      <ul class="clubs">
+        <li><strong>FOSS Club, DTC · Co-Lead.</strong> Helping build an open-source community and bring tech events and hackathons to life.</li>
+        <li><strong>Cultural Council.</strong> Coordinating people, creative teams, and campus events — because not everything runs in a terminal.</li>
+        <li><strong>French, toujours.</strong> DELF A1 certified, with experience teaching French to beginners and school students.</li>
+      </ul>
+    </div>
+  </div>
 </section>
-
+ 
+<!-- ==========================================================
+     CONTACT (postcard)
+     ========================================================== -->
 <footer class="contact" id="contact">
-<div class="wrap">
-<h2>Send me a postcard<span class="fr">Écrivez-moi</span></h2>
-<div class="cw"><div class="card">
-<span class="pm" aria-hidden="true">DELHI<br>→<br>PARIS</span><span class="stamp" aria-hidden="true">IN<br>FR</span>
-<div><p><strong>Cher recruteur</strong> (Dear recruiter),</p>
-<p>I’m looking for an internship or first backend role. I like clean APIs, good teams and a strong cup of chai.</p>
-<p>À bientôt, see you soon!</p>
-<div class="social-icons" aria-label="Contact and social profiles">
-<a href="mailto:1210bhumiaggarwal@gmail.com" aria-label="Email Bhumi" title="Email"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 5h18a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V7a2 2 0 0 1 2-2zm9 7.2L20.2 7H3.8L12 12.2zM3 9v8h18V9l-9 5.7L3 9z"/></svg></a>
-<a href="https://github.com/CurlyBracket11" target="_blank" rel="noopener noreferrer" aria-label="GitHub" title="GitHub"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 .8a11.2 11.2 0 0 0-3.54 21.83c.56.1.76-.24.76-.54v-2.1c-3.1.67-3.76-1.32-3.76-1.32-.5-1.28-1.23-1.62-1.23-1.62-1.01-.69.08-.68.08-.68 1.12.08 1.7 1.15 1.7 1.15.99 1.7 2.6 1.21 3.23.93.1-.72.39-1.21.7-1.49-2.48-.28-5.09-1.24-5.09-5.52 0-1.22.44-2.22 1.15-3-.12-.28-.5-1.42.11-2.96 0 0 .94-.3 3.08 1.14a10.7 10.7 0 0 1 5.6 0c2.14-1.45 3.08-1.14 3.08-1.14.61 1.54.23 2.68.11 2.96.72.78 1.15 1.78 1.15 3 0 4.29-2.61 5.23-5.1 5.51.4.35.75 1.03.75 2.08v3.08c0 .3.2.65.77.54A11.2 11.2 0 0 0 12 .8z"/></svg></a>
-<a href="https://www.instagram.com/bhumiiii_x/?hl=en" target="_blank" rel="noopener noreferrer" aria-label="Instagram" title="Instagram"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 2h10a5 5 0 0 1 5 5v10a5 5 0 0 1-5 5H7a5 5 0 0 1-5-5V7a5 5 0 0 1 5-5zm0 2.2A2.8 2.8 0 0 0 4.2 7v10A2.8 2.8 0 0 0 7 19.8h10a2.8 2.8 0 0 0 2.8-2.8V7A2.8 2.8 0 0 0 17 4.2H7zM12 7a5 5 0 1 1 0 10 5 5 0 0 1 0-10zm0 2.2a2.8 2.8 0 1 0 0 5.6 2.8 2.8 0 0 0 0-5.6zM17.5 5.6a1.2 1.2 0 1 1 0 2.4 1.2 1.2 0 0 1 0-2.4z"/></svg></a>
-<a href="https://www.linkedin.com/in/bhumiaggarwal29" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" title="LinkedIn"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5.2 3.1a2.1 2.1 0 1 1 0 4.2 2.1 2.1 0 0 1 0-4.2zM3.4 9h3.7v12H3.4zM9.4 9H13v1.6h.1A4 4 0 0 1 16.7 8c3.8 0 4.5 2.5 4.5 5.7V21h-3.8v-6.5c0-1.6 0-3.6-2.2-3.6s-2.5 1.7-2.5 3.5V21H9.4z"/></svg></a>
-<a href="https://discord.com/users/1413908278945251328" target="_blank" rel="noopener noreferrer" aria-label="Discord" title="Discord"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M19.7 5.1A18 18 0 0 0 15.3 3.7l-.5 1a16.6 16.6 0 0 0-5.6 0l-.5-1a18 18 0 0 0-4.4 1.4C1.5 9.2.7 13.2 1.1 17.2a18 18 0 0 0 5.4 2.7l1.2-2a11.5 11.5 0 0 1-1.9-.9l.5-.4a12.9 12.9 0 0 0 11.4 0l.5.4a11.5 11.5 0 0 1-1.9.9l1.2 2a18 18 0 0 0 5.4-2.7c.5-4.6-.8-8.6-3.2-12.1zM8.7 14.7c-1.1 0-2-1-2-2.2s.9-2.2 2-2.2 2 1 2 2.2-.9 2.2-2 2.2zm6.6 0c-1.1 0-2-1-2-2.2s.9-2.2 2-2.2 2 1 2 2.2-.9 2.2-2 2.2z"/></svg></a>
-</div></div>
-<div class="addr"><div>Bhumi Aggarwal</div><div><a class="email-cta" href="mailto:1210bhumiaggarwal@gmail.com" aria-label="Email 1210bhumiaggarwal@gmail.com">Say bonjour ✉</a></div><div>Delhi, India</div></div>
-</div></div>
-</div>
+  <div class="wrap">
+    <h2>Send me a postcard<span class="fr">Écrivez-moi</span></h2>
+ 
+    <div class="cw">
+      <div class="card">
+        <span class="pm" aria-hidden="true">DELHI<br>→<br>PARIS</span>
+        <span class="stamp" aria-hidden="true">IN<br>FR</span>
+ 
+        <!-- Message side -->
+        <div>
+          <p><strong>Cher recruteur</strong> (Dear recruiter),</p>
+          <p>I’m looking for an internship or first backend role. I like clean APIs, good teams and a strong cup of chai.</p>
+          <p>À bientôt, see you soon!</p>
+ 
+          <div class="social-icons" aria-label="Contact and social profiles">
+            <!-- Email -->
+            <a href="mailto:1210bhumiaggarwal@gmail.com" aria-label="Email Bhumi" title="Email">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 5h18a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V7a2 2 0 0 1 2-2zm9 7.2L20.2 7H3.8L12 12.2zM3 9v8h18V9l-9 5.7L3 9z"/></svg>
+            </a>
+            <!-- GitHub -->
+            <a href="https://github.com/CurlyBracket11" target="_blank" rel="noopener noreferrer" aria-label="GitHub" title="GitHub">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 .8a11.2 11.2 0 0 0-3.54 21.83c.56.1.76-.24.76-.54v-2.1c-3.1.67-3.76-1.32-3.76-1.32-.5-1.28-1.23-1.62-1.23-1.62-1.01-.69.08-.68.08-.68 1.12.08 1.7 1.15 1.7 1.15.99 1.7 2.6 1.21 3.23.93.1-.72.39-1.21.7-1.49-2.48-.28-5.09-1.24-5.09-5.52 0-1.22.44-2.22 1.15-3-.12-.28-.5-1.42.11-2.96 0 0 .94-.3 3.08 1.14a10.7 10.7 0 0 1 5.6 0c2.14-1.45 3.08-1.14 3.08-1.14.61 1.54.23 2.68.11 2.96.72.78 1.15 1.78 1.15 3 0 4.29-2.61 5.23-5.1 5.51.4.35.75 1.03.75 2.08v3.08c0 .3.2.65.77.54A11.2 11.2 0 0 0 12 .8z"/></svg>
+            </a>
+            <!-- Instagram -->
+            <a href="https://www.instagram.com/bhumiiii_x/?hl=en" target="_blank" rel="noopener noreferrer" aria-label="Instagram" title="Instagram">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 2h10a5 5 0 0 1 5 5v10a5 5 0 0 1-5 5H7a5 5 0 0 1-5-5V7a5 5 0 0 1 5-5zm0 2.2A2.8 2.8 0 0 0 4.2 7v10A2.8 2.8 0 0 0 7 19.8h10a2.8 2.8 0 0 0 2.8-2.8V7A2.8 2.8 0 0 0 17 4.2H7zM12 7a5 5 0 1 1 0 10 5 5 0 0 1 0-10zm0 2.2a2.8 2.8 0 1 0 0 5.6 2.8 2.8 0 0 0 0-5.6zM17.5 5.6a1.2 1.2 0 1 1 0 2.4 1.2 1.2 0 0 1 0-2.4z"/></svg>
+            </a>
+            <!-- LinkedIn -->
+            <a href="https://www.linkedin.com/in/bhumiaggarwal29" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" title="LinkedIn">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5.2 3.1a2.1 2.1 0 1 1 0 4.2 2.1 2.1 0 0 1 0-4.2zM3.4 9h3.7v12H3.4zM9.4 9H13v1.6h.1A4 4 0 0 1 16.7 8c3.8 0 4.5 2.5 4.5 5.7V21h-3.8v-6.5c0-1.6 0-3.6-2.2-3.6s-2.5 1.7-2.5 3.5V21H9.4z"/></svg>
+            </a>
+            <!-- Discord -->
+            <a href="https://discord.com/users/1413908278945251328" target="_blank" rel="noopener noreferrer" aria-label="Discord" title="Discord">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M19.7 5.1A18 18 0 0 0 15.3 3.7l-.5 1a16.6 16.6 0 0 0-5.6 0l-.5-1a18 18 0 0 0-4.4 1.4C1.5 9.2.7 13.2 1.1 17.2a18 18 0 0 0 5.4 2.7l1.2-2a11.5 11.5 0 0 1-1.9-.9l.5-.4a12.9 12.9 0 0 0 11.4 0l.5.4a11.5 11.5 0 0 1-1.9.9l1.2 2a18 18 0 0 0 5.4-2.7c.5-4.6-.8-8.6-3.2-12.1zM8.7 14.7c-1.1 0-2-1-2-2.2s.9-2.2 2-2.2 2 1 2 2.2-.9 2.2-2 2.2zm6.6 0c-1.1 0-2-1-2-2.2s.9-2.2 2-2.2 2 1 2 2.2-.9 2.2-2 2.2z"/></svg>
+            </a>
+          </div>
+        </div>
+ 
+        <!-- Address side -->
+        <div class="addr">
+          <div>Bhumi Aggarwal</div>
+          <div><a class="email-cta" href="mailto:1210bhumiaggarwal@gmail.com" aria-label="Email 1210bhumiaggarwal@gmail.com">Say bonjour ✉</a></div>
+          <div>Delhi, India</div>
+        </div>
+      </div>
+    </div>
+  </div>
 </footer>
-
+ 
+<!-- ==========================================================
+     SECRET GAME: guess the French word
+     ========================================================== -->
 <button class="egg" id="egg" aria-label="Secret game: guess the French word" title="psst… try me">🥐</button>
+ 
 <dialog id="dlg" aria-labelledby="gh">
-<h3 id="gh">Guess the French word</h3>
-<p id="hint"></p>
-<input id="ans" aria-label="Your guess" autocomplete="off" placeholder="Type your guess">
-<p id="msg"></p>
-<button class="btn" id="go">Guess</button> <button class="btn" id="cl" style="background:#fff">Close</button>
+  <h3 id="gh">Guess the French word</h3>
+  <p id="hint"></p>
+  <input id="ans" aria-label="Your guess" autocomplete="off" placeholder="Type your guess">
+  <p id="msg"></p>
+  <button class="btn" id="go">Guess</button>
+  <button class="btn" id="cl" style="background:#fff">Close</button>
 </dialog>
-
+ 
 <script>
-var S=[["2022","The Plot Begins","10th grade: completed. Main character energy: loading… One chapter closed, a hundred possibilities unlocked.","Le début"],["2023","Bonjour, World!","A little French, a little curiosity. Somewhere between learning a new language and figuring things out, the plot kept moving.","Bonjour !"],["2024","Ctrl + New Chapter","12th grade: done. Engineering: unlocked. Entered Delhi Technical Campus, picked CST, and discovered that the world of tech had more drama than expected. And yes, I liked the drama.","Nouveau chapitre"],["2025","Commit. Learn. Repeat.","Joined FOSS and started going deeper into backend development. Explored how things work behind the scenes, helped organise events, and discovered that building experiences is fun too.","Les coulisses"],["2026","From Attendee to Organizer","Organised a FOSS hackathon, became Co-Lead of the FOSS Club at DTC, and started exploring AWS. Apparently, one terminal wasn’t enough. More cultural council adventures along the way, too.","En avant !"],["Soon","To Be Continued…","More code. Bigger builds. New adventures. The roadmap is a work in progress. The ambition isn’t.","Prochain arrêt"]];
-var sc=document.getElementById('scene'),tr=document.getElementById('train'),info=document.getElementById('info'),board=document.getElementById('board'),pp=document.getElementById('pp'),cur=0,play=true,moving=false,t,raf,X=0,D=0,LX=0,started=false;
-function SW(){return sc.clientWidth}
-function pos(i){return 9+i/(S.length-1)*82}
-function SC(){return matchMedia('(max-width:760px)').matches?.62:1}
-function px(i){return pos(i)/100*SW()}
-function draw(x,b){D+=x-LX;LX=x;X=x;tr.style.transform='translate3d('+(x-120)+'px,'+b+'px,0) scale('+SC()+')';sc.style.setProperty('--px',(-D*.5)+'px');sc.style.setProperty('--pw',(-D*.2)+'px')}
-function glide(to,ms,done){cancelAnimationFrame(raf);var from=X,t0=null;raf=requestAnimationFrame(function f(ts){if(t0===null)t0=ts;var k=Math.min((ts-t0)/ms,1),e=-(Math.cos(Math.PI*k)-1)/2;draw(from+(to-from)*e,Math.sin(ts/110)*.5*Math.sin(Math.PI*k));if(k<1)raf=requestAnimationFrame(f);else done()})}
-var sts=S.map(function(s,i){var b=document.createElement('button');b.className='st';b.style.left=pos(i)+'%';b.textContent=s[0];b.setAttribute('aria-label','Station '+s[0]+': '+s[1]);b.onclick=function(){go(i)};sc.appendChild(b);return b});
-function mark(i){sts.forEach(function(b,j){b.setAttribute('aria-current',j==i)})}
-function go(i){clearTimeout(t);cur=i;moving=true;tr.classList.remove('stop');board.textContent='Next stop → '+S[i][0]+' · '+S[i][1];mark(i);glide(px(i),2200+Math.abs(px(i)-X)/SW()*4000,arrive)}
-function arrive(){moving=false;tr.classList.add('stop');var s=S[cur];board.textContent='Now at → '+s[0]+' · '+s[1];info.innerHTML='<b>'+s[0]+'</b><h3>'+s[1]+' <small style="font:italic 500 1rem Fraunces;opacity:.7">· '+s[3]+'</small></h3><p>'+s[2]+'</p>';if(play)t=setTimeout(next,4800)}
-function next(){if(!play)return;if(cur<S.length-1)go(cur+1);else leave()}
-function leave(){moving=true;tr.classList.remove('stop');mark(-1);board.textContent='More stations coming… see you next round';glide(SW()+160,3400,function(){LX=X=-160;draw(-160,0);go(0)})}
-pp.onclick=function(){play=!play;pp.textContent=play?'Pause':'Play';clearTimeout(t);if(play&&!moving)t=setTimeout(next,1500)};
-X=LX=px(0);draw(X,0);
-addEventListener('resize',function(){if(!moving){X=LX=px(cur);draw(X,0)}});
-new IntersectionObserver(function(e){if(e[0].isIntersecting&&!started){started=true;cur=0;mark(0);arrive()}},{threshold:.2}).observe(sc);
-var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){var el=e.target;(el.querySelector('.typed,.card')||el).classList.add('in');io.unobserve(el)}})},{threshold:.15});
-document.querySelectorAll('.rv,.cols,.cw').forEach(function(el){io.observe(el)});
-document.querySelectorAll('.menu .rv').forEach(function(el,i){el.style.transitionDelay=(i%6*90)+'ms'});
-var tw=document.getElementById('tower');
-addEventListener('scroll',function(){var y=Math.min(scrollY,700);tw.style.transform='translateY('+y*.25+'px) scale('+(1+y/1400)+')'},{passive:true});
-var W=[["Hello, and also “good day”","bonjour","Bonjour to you too! Your accent is magnifique. 🥐"],["Thank you","merci","Merci! My server says it after every request."],["The one thing a Frenchman can’t live without (hint: it’s cheese)","fromage","Parfait! You’re officially invited for chai and fromage. ☕🧀"]],wi=0,d=document.getElementById('dlg'),a=document.getElementById('ans'),m=document.getElementById('msg');
-function show(){document.getElementById('hint').textContent='Clue '+(wi+1)+' of 3: '+W[wi][0];a.value='';m.textContent=''}
-function openG(){wi=0;show();d.showModal();a.focus()}
-document.getElementById('egg').onclick=openG;tw.onclick=openG;
-document.getElementById('cl').onclick=function(){d.close()};
-function norm(s){return s.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g,'').trim()}
-document.getElementById('go').onclick=function(){if(norm(a.value)==W[wi][1]){m.textContent=W[wi][2];wi++;if(wi<W.length)setTimeout(show,1800);else setTimeout(function(){m.textContent='You got all three. Write to me, I owe you a coffee. ☕'},1800)}else m.textContent='Not quite. Try again!'};
-a.addEventListener('keydown',function(e){if(e.key==='Enter')document.getElementById('go').click()});
+/* ==========================================================
+   A. METRO TIMELINE
+   ========================================================== */
+ 
+// Each milestone: [year/label, title, description, French caption]
+var milestones = [
+  ["2022", "The Plot Begins",
+   "10th grade: completed. Main character energy: loading… One chapter closed, a hundred possibilities unlocked.",
+   "Le début"],
+  ["2023", "Bonjour, World!",
+   "A little French, a little curiosity. Somewhere between learning a new language and figuring things out, the plot kept moving.",
+   "Bonjour !"],
+  ["2024", "Ctrl + New Chapter",
+   "12th grade: done. Engineering: unlocked. Entered Delhi Technical Campus, picked CST, and discovered that the world of tech had more drama than expected. And yes, I liked the drama.",
+   "Nouveau chapitre"],
+  ["2025", "Commit. Learn. Repeat.",
+   "Joined FOSS and started going deeper into backend development. Explored how things work behind the scenes, helped organise events, and discovered that building experiences is fun too.",
+   "Les coulisses"],
+  ["2026", "From Attendee to Organizer",
+   "Organised a FOSS hackathon, became Co-Lead of the FOSS Club at DTC, and started exploring AWS. Apparently, one terminal wasn’t enough. More cultural council adventures along the way, too.",
+   "En avant !"],
+  ["Soon", "To Be Continued…",
+   "More code. Bigger builds. New adventures. The roadmap is a work in progress. The ambition isn’t.",
+   "Prochain arrêt"]
+];
+ 
+// DOM references
+var scene   = document.getElementById('scene');
+var train   = document.getElementById('train');
+var info    = document.getElementById('info');
+var board   = document.getElementById('board');
+var pauseBtn = document.getElementById('pp');
+ 
+// State
+var currentStation = 0;     // index of the station we're at / heading to
+var autoPlay       = true;  // false when the user pauses
+var isMoving       = false; // true while the train is gliding
+var nextTimer;              // timeout id for auto-advance
+var rafId;                  // requestAnimationFrame id
+var trainX = 0;             // current train x position (px)
+var scrollDist = 0;         // total distance travelled (drives parallax)
+var lastX = 0;              // previous x, used to compute distance
+var hasStarted = false;     // starts the first time the scene is visible
+ 
+function sceneWidth() { return scene.clientWidth; }
+ 
+// Station position as a percentage of the scene width (9% … 91%)
+function stationPercent(i) { return 9 + i / (milestones.length - 1) * 82; }
+ 
+// Station position in pixels
+function stationPx(i) { return stationPercent(i) / 100 * sceneWidth(); }
+ 
+// Train is scaled down on phones
+function trainScale() { return matchMedia('(max-width:760px)').matches ? .62 : 1; }
+ 
+// Move the train to x, with a small vertical bob, and update parallax
+function drawTrain(x, bobY) {
+  scrollDist += x - lastX;
+  lastX = x;
+  trainX = x;
+  train.style.transform = 'translate3d(' + (x - 120) + 'px,' + bobY + 'px,0) scale(' + trainScale() + ')';
+  scene.style.setProperty('--px', (-scrollDist * .5) + 'px');  // lamps move faster
+  scene.style.setProperty('--pw', (-scrollDist * .2) + 'px');  // wall tiles move slower
+}
+ 
+// Animate the train from its current x to `target` with ease-in-out
+function glide(target, duration, onDone) {
+  cancelAnimationFrame(rafId);
+  var from = trainX;
+  var startTime = null;
+ 
+  rafId = requestAnimationFrame(function frame(now) {
+    if (startTime === null) startTime = now;
+    var progress = Math.min((now - startTime) / duration, 1);
+    var eased = -(Math.cos(Math.PI * progress) - 1) / 2;
+    var bob = Math.sin(now / 110) * .5 * Math.sin(Math.PI * progress);
+ 
+    drawTrain(from + (target - from) * eased, bob);
+ 
+    if (progress < 1) rafId = requestAnimationFrame(frame);
+    else onDone();
+  });
+}
+ 
+// Create one clickable button per station
+var stationButtons = milestones.map(function (m, i) {
+  var btn = document.createElement('button');
+  btn.className = 'st';
+  btn.style.left = stationPercent(i) + '%';
+  btn.textContent = m[0];
+  btn.setAttribute('aria-label', 'Station ' + m[0] + ': ' + m[1]);
+  btn.onclick = function () { goTo(i); };
+  scene.appendChild(btn);
+  return btn;
+});
+ 
+// Highlight the active station (pass -1 to clear)
+function markStation(i) {
+  stationButtons.forEach(function (btn, j) {
+    btn.setAttribute('aria-current', j == i);
+  });
+}
+ 
+// Start travelling to station i
+function goTo(i) {
+  clearTimeout(nextTimer);
+  currentStation = i;
+  isMoving = true;
+  train.classList.remove('stop');
+  board.textContent = 'Next stop → ' + milestones[i][0] + ' · ' + milestones[i][1];
+  markStation(i);
+ 
+  var travelTime = 2200 + Math.abs(stationPx(i) - trainX) / sceneWidth() * 4000;
+  glide(stationPx(i), travelTime, arrive);
+}
+ 
+// Train has reached the station: open doors, show the milestone
+function arrive() {
+  isMoving = false;
+  train.classList.add('stop');
+ 
+  var m = milestones[currentStation];
+  board.textContent = 'Now at → ' + m[0] + ' · ' + m[1];
+  info.innerHTML =
+    '<b>' + m[0] + '</b>' +
+    '<h3>' + m[1] + ' <small style="font:italic 500 1rem Fraunces;opacity:.7">· ' + m[3] + '</small></h3>' +
+    '<p>' + m[2] + '</p>';
+ 
+  if (autoPlay) nextTimer = setTimeout(goToNext, 4800);
+}
+ 
+// Auto-advance: next station, or leave and loop back to the start
+function goToNext() {
+  if (!autoPlay) return;
+  if (currentStation < milestones.length - 1) goTo(currentStation + 1);
+  else leaveAndLoop();
+}
+ 
+// Train exits to the right, re-enters from the left at station 0
+function leaveAndLoop() {
+  isMoving = true;
+  train.classList.remove('stop');
+  markStation(-1);
+  board.textContent = 'More stations coming… see you next round';
+ 
+  glide(sceneWidth() + 160, 3400, function () {
+    lastX = trainX = -160;
+    drawTrain(-160, 0);
+    goTo(0);
+  });
+}
+ 
+// Pause / Play button
+pauseBtn.onclick = function () {
+  autoPlay = !autoPlay;
+  pauseBtn.textContent = autoPlay ? 'Pause' : 'Play';
+  clearTimeout(nextTimer);
+  if (autoPlay && !isMoving) nextTimer = setTimeout(goToNext, 1500);
+};
+ 
+// Initial position
+trainX = lastX = stationPx(0);
+drawTrain(trainX, 0);
+ 
+// Keep the train aligned on resize
+addEventListener('resize', function () {
+  if (!isMoving) {
+    trainX = lastX = stationPx(currentStation);
+    drawTrain(trainX, 0);
+  }
+});
+ 
+// Start the journey the first time the scene scrolls into view
+new IntersectionObserver(function (entries) {
+  if (entries[0].isIntersecting && !hasStarted) {
+    hasStarted = true;
+    currentStation = 0;
+    markStation(0);
+    arrive();
+  }
+}, { threshold: 0.2 }).observe(scene);
+ 
+/* ==========================================================
+   B. SCROLL-REVEAL ANIMATIONS
+   ========================================================== */
+var revealObserver = new IntersectionObserver(function (entries) {
+  entries.forEach(function (entry) {
+    if (entry.isIntersecting) {
+      var el = entry.target;
+      // For containers, animate the inner .typed / .card element instead
+      (el.querySelector('.typed, .card') || el).classList.add('in');
+      revealObserver.unobserve(el);
+    }
+  });
+}, { threshold: 0.15 });
+ 
+document.querySelectorAll('.rv, .cols, .cw').forEach(function (el) {
+  revealObserver.observe(el);
+});
+ 
+// Stagger the menu items slightly
+document.querySelectorAll('.menu .rv').forEach(function (el, i) {
+  el.style.transitionDelay = (i % 6 * 90) + 'ms';
+});
+ 
+/* ==========================================================
+   C. EIFFEL TOWER PARALLAX ON SCROLL
+   ========================================================== */
+var tower = document.getElementById('tower');
+ 
+addEventListener('scroll', function () {
+  var y = Math.min(scrollY, 700);
+  tower.style.transform = 'translateY(' + y * .25 + 'px) scale(' + (1 + y / 1400) + ')';
+}, { passive: true });
+ 
+/* ==========================================================
+   D. SECRET GAME: GUESS THE FRENCH WORD
+   ========================================================== */
+ 
+// Each round: [clue, correct answer (lowercase, no accents), reply on success]
+var words = [
+  ["Hello, and also “good day”", "bonjour",
+   "Bonjour to you too! Your accent is magnifique. 🥐"],
+  ["Thank you", "merci",
+   "Merci! My server says it after every request."],
+  ["The one thing a Frenchman can’t live without (hint: it’s cheese)", "fromage",
+   "Parfait! You’re officially invited for chai and fromage. ☕🧀"]
+];
+ 
+var round     = 0;
+var dialog    = document.getElementById('dlg');
+var answerBox = document.getElementById('ans');
+var message   = document.getElementById('msg');
+var guessBtn  = document.getElementById('go');
+ 
+// Show the clue for the current round
+function showClue() {
+  document.getElementById('hint').textContent = 'Clue ' + (round + 1) + ' of 3: ' + words[round][0];
+  answerBox.value = '';
+  message.textContent = '';
+}
+ 
+// Open the game from the beginning
+function openGame() {
+  round = 0;
+  showClue();
+  dialog.showModal();
+  answerBox.focus();
+}
+ 
+document.getElementById('egg').onclick = openGame;
+tower.onclick = openGame;
+document.getElementById('cl').onclick = function () { dialog.close(); };
+ 
+// Lowercase, strip accents and spaces so "Merci " or "MERCÍ" still match
+function normalize(s) {
+  return s.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '').trim();
+}
+ 
+guessBtn.onclick = function () {
+  if (normalize(answerBox.value) === words[round][1]) {
+    message.textContent = words[round][2];
+    round++;
+ 
+    if (round < words.length) {
+      setTimeout(showClue, 1800);
+    } else {
+      setTimeout(function () {
+        message.textContent = 'You got all three. Write to me, I owe you a coffee. ☕';
+      }, 1800);
+    }
+  } else {
+    message.textContent = 'Not quite. Try again!';
+  }
+};
+ 
+// Press Enter to submit a guess
+answerBox.addEventListener('keydown', function (e) {
+  if (e.key === 'Enter') guessBtn.click();
+});
 </script>
 </body>
 </html>
