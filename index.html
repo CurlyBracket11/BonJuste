@@ -505,15 +505,131 @@ h1 {
 .info p { margin: 0; color: var(--muted); }
 @media (prefers-color-scheme: dark) { .info b { color: var(--gold); } }
  
-/* Pause / Play button */
+
+/* Metro journey controls */
+
+/* Metro control panel buttons */
 .ctl {
   margin-top: 18px;
-  background: none;
-  border: 2px solid #fff;
+  position: relative;
+  background: rgba(12, 20, 29, 0.72);
+  border: 1px solid rgba(255, 255, 255, 0.42);
+  border-radius: 5px;
   color: #fff;
-  border-radius: 999px;
-  padding: 5px 18px;
+  padding: 11px 20px;
+  font: inherit;
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 1.2px;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition:
+    background 180ms ease,
+    border-color 180ms ease,
+    box-shadow 180ms ease,
+    transform 180ms ease;
 }
+
+.ctl:hover {
+  background: rgba(255, 255, 255, 0.1);
+  border-color: #f5c86b;
+  box-shadow: inset 3px 0 0 #f5c86b;
+}
+
+.ctl:active {
+  transform: translateY(1px);
+}
+
+.ctl:focus-visible {
+  outline: 2px solid #f5c86b;
+  outline-offset: 3px;
+}
+
+
+.metro-controls {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 12px;
+}
+
+.journey-status {
+  display: block;
+  flex: 0 0 100%;
+  min-height: 1.5em;
+  line-height: 1.5;
+  font-size: 0.78rem;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  opacity: 0.8;
+}
+
+
+/* Integrated metro station control panel */
+.metro-controls {
+  position: relative;
+  padding: 16px 18px;
+  margin-top: 18px;
+  background: rgba(12, 20, 29, 0.82);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  border-left: 3px solid #f5c86b;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 10px;
+}
+
+.journey-status {
+  flex: 0 0 100%;
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  min-height: 20px;
+  color: rgba(255, 255, 255, 0.78);
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 1.3px;
+  text-transform: uppercase;
+}
+
+.journey-status::before {
+  content: "";
+  width: 7px;
+  height: 7px;
+  flex-shrink: 0;
+  border-radius: 50%;
+  background: #f5c86b;
+  box-shadow: 0 0 8px rgba(245, 200, 107, 0.55);
+}
+
+.metro-controls .ctl {
+  margin-top: 2px;
+}
+
+
+/* Active journey state */
+.ctl.is-active {
+  border-color: #f5c86b;
+  color: #f5c86b;
+  box-shadow: inset 3px 0 0 #f5c86b;
+}
+
+.ctl.is-active::before {
+  content: "●";
+  margin-right: 8px;
+  font-size: 0.65rem;
+}
+
+.ctl:disabled {
+  opacity: 0.45;
+  cursor: not-allowed;
+  box-shadow: none;
+}
+
+
+
+
+
  
 /* "SORTIE · EXIT" tiled wall between the metro and the projects */
 .tiles {
@@ -895,12 +1011,13 @@ dialog input {
       <p class="hello">Bonjuste · my own word for hello: a little bonjour, a little namaste</p>
       <h1>Bonjuste, <br>I’m Bhumi Aggarwal.</h1>
       <p class="lede">
-        Backend developer from Delhi, Paris in spirit. I build reliable APIs and systems, lead college clubs, and learn French for fun. I’m looking for my first backend role.
-        <span class="fr">Je construis des backends, et j’apprends le français.</span>
-      </p>
-      <a class="btn" href="#journey">See my journey</a>
-      <a class="btn alt" href="#contact">Contact me</a>
-    </div>
+  I’m learning Java and backend development, building projects to strengthen my skills and understand how reliable systems work.
+  <span class="fr">Je construis, j’apprends, je progresse.</span>
+</p>
+      
+<a class="btn" href="mailto:YOUR_EMAIL@example.com">Email Me ↗</a>
+<a class="btn alt" href="#contact">Find me here ↗</a>
+
  
     <!-- Eiffel Tower line-art (click it to open the secret game) -->
     <svg class="tower" id="tower" viewBox="0 -30 200 430" role="img" aria-label="Eiffel Tower. Click for a small surprise.">
@@ -953,7 +1070,13 @@ dialog input {
     </div>
  
     <div class="info" id="info" aria-live="polite"></div>
-    <button class="ctl" id="pp">Pause</button>
+    <div class="metro-controls">
+  <span class="journey-status" id="journeyStatus" aria-live="polite">
+    Train in service
+  </span>
+  <button class="ctl" id="pp">Board Train</button>
+  <button class="ctl" id="unboard">Unboard Here</button>
+</div>
   </div>
 </section>
  
@@ -1254,12 +1377,45 @@ function leaveAndLoop() {
 }
  
 // Pause / Play button
+
+
 pauseBtn.onclick = function () {
-  autoPlay = !autoPlay;
-  pauseBtn.textContent = autoPlay ? 'Pause' : 'Play';
   clearTimeout(nextTimer);
-  if (autoPlay && !isMoving) nextTimer = setTimeout(goToNext, 1500);
+  autoPlay = true;
+
+  pauseBtn.textContent = 'Boarding…';
+  pauseBtn.classList.add('is-active');
+  document.getElementById('journeyStatus').textContent =
+    'Train departing shortly';
+
+  if (!isMoving) {
+    nextTimer = setTimeout(function () {
+      pauseBtn.textContent = 'On the Journey';
+      goToNext();
+    }, 1500);
+  }
 };
+
+
+
+var unboardBtn = document.getElementById('unboard');
+
+unboardBtn.onclick = function () {
+  clearTimeout(nextTimer);
+  autoPlay = false;
+
+  pauseBtn.textContent = 'Board Train';
+  pauseBtn.classList.remove('is-active');
+  document.getElementById('journeyStatus').textContent =
+    'You are at ' + milestones[currentStation][0];
+
+  board.textContent =
+    'NOW STOPPING · ' + milestones[currentStation][0];
+
+  train.classList.add('stop');
+};
+
+
  
 // Initial position
 trainX = lastX = stationPx(0);
