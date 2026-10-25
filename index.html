@@ -203,28 +203,48 @@ h1 {
  
 /* Eiffel Tower line-art that "draws itself" */
 .tower {
+  display: block;
   width: 100%;
-  max-height: 76vh;
+  height: auto;
+  max-height: 78vh;
+  margin: 0 auto;
   cursor: pointer;
   will-change: transform;
+  overflow: hidden;
+  filter: drop-shadow(0 0 7px rgba(232,176,74,.45));
+  -webkit-mask-image: linear-gradient(180deg, transparent 0, #000 14%);
+  mask-image: linear-gradient(180deg, transparent 0, #000 14%);
 }
-.tower path,
-.tower line {
+
+.tower path {
   fill: none;
-  stroke: var(--gold);
-  stroke-width: 2.6;
+  stroke: url(#towerGold);
   stroke-linecap: round;
-  stroke-dasharray: 1200;
-  stroke-dashoffset: 1200;
-  animation: draw 3s .3s forwards;
+  stroke-linejoin: round;
+  stroke-dasharray: 1000;
+  stroke-dashoffset: 1000;
+  animation: draw 2.4s ease forwards;
 }
-@keyframes draw { to { stroke-dashoffset: 0; } }
- 
+
+/* Draw order: outline → platforms → lattice → spire */
+.tower .o { stroke-width: 2;   animation-delay: .2s; }
+.tower .p { stroke-width: 1.7; animation-delay: 1.4s; animation-duration: 1.6s; }
+.tower .l { stroke-width: .9;  animation-delay: 1.9s; animation-duration: 2.4s; }
+.tower .t { stroke-width: 1.5; animation-delay: 3s;   animation-duration: 1.4s; }
+
 .tower circle {
-  fill: #fff;
+  fill: #f7d98a;
   opacity: 0;
-  animation: twinkle 1.3s 3s infinite alternate;
+  animation: lamp 1.6s 4.2s ease-in-out infinite alternate both;
 }
+
+@keyframes draw { to { stroke-dashoffset: 0; } }
+@keyframes lamp { 0% { opacity: .3; } 100% { opacity: 1; } }
+
+@media (max-width: 760px) {
+  .tower { max-height: 44vh; }
+}
+
  
 /* Rooftop silhouette at the bottom of the hero */
 .roofs {
@@ -1017,21 +1037,71 @@ dialog input {
       
 <a class="btn" href="mailto:YOUR_EMAIL@example.com">Email Me ↗</a>
 <a class="btn alt" href="#contact">Find me here ↗</a>
+</div>
 
  
     <!-- Eiffel Tower line-art (click it to open the secret game) -->
-    <svg class="tower" id="tower" viewBox="0 -30 200 430" role="img" aria-label="Eiffel Tower. Click for a small surprise.">
-      <path d="M100 -20V10L108 80L120 140L140 220L175 390H150L132 330Q100 300 68 330L50 390H25L60 220L80 140L92 80L100 10"/>
-      <line x1="90" y1="100" x2="110" y2="100"/>
-      <line x1="72" y1="150" x2="128" y2="150"/>
-      <line x1="52" y1="225" x2="148" y2="225"/>
-      <path d="M72 150L128 225M128 150L72 225M60 225L138 330M140 225L62 330"/>
-      <circle cx="100" cy="-20" r="4"/>
-      <circle cx="92" cy="100" r="3"/>
-      <circle cx="108" cy="100" r="3"/>
-      <circle cx="74" cy="150" r="3"/>
-      <circle cx="126" cy="150" r="3"/>
-    </svg>
+    
+<svg class="tower" id="tower"
+     viewBox="8 96 184 296"
+     role="img"
+     aria-label="Golden Eiffel Tower drawing itself"
+     xmlns="http://www.w3.org/2000/svg">
+
+  <defs>
+    <linearGradient id="towerGold" gradientUnits="userSpaceOnUse" x1="0" y1="0" x2="0" y2="400">
+      <stop offset="0" stop-color="#f9e0a0"/>
+      <stop offset="1" stop-color="#e8b04a"/>
+    </linearGradient>
+  </defs>
+
+  <!-- 1. Outline: curved outer legs + big base arch -->
+  <path class="o" pathLength="1000" d="M30 380 C50 330 62 290 76 250 C88 190 93 120 95 69 L97.5 40"/>
+  <path class="o" pathLength="1000" d="M170 380 C150 330 138 290 124 250 C112 190 107 120 105 69 L102.5 40"/>
+  <path class="o" pathLength="1000" d="M62 380 C64 345 82 330 100 330 C118 330 136 345 138 380"/>
+  <path class="o" pathLength="1000" d="M16 380 H184"/>
+
+  <!-- 2. Platforms -->
+  <path class="p" pathLength="1000" d="M50 316 H150 M52 322 H148 M50 316 L52 322 M150 316 L148 322"/>
+  <path class="p" pathLength="1000" d="M72 249 H128 M74 254 H126 M72 249 L74 254 M128 249 L126 254"/>
+  <path class="p" pathLength="1000" d="M90 69 H110 M91 73 H109 M90 69 L91 73 M110 69 L109 73"/>
+
+  <!-- 3. Lattice: legs -->
+  <path class="l" pathLength="1000" d="
+    M30 380 L65 361 M62 380 L37 362 M37 362 L71 347 M65 361 L43 347
+    M37 362 L65 361 M43 347 L71 347
+    M170 380 L135 361 M138 380 L163 362 M163 362 L129 347 M135 361 L157 347
+    M163 362 L135 361 M157 347 L129 347"/>
+
+  <!-- Lattice: between 1st and 2nd platform -->
+  <path class="l" pathLength="1000" d="
+    M54 317 L134 283 M146 317 L66 283
+    M66 283 L124 250 M134 283 L76 250
+    M66 283 H134"/>
+
+  <!-- Lattice: long tapering upper section -->
+  <path class="l" pathLength="1000" d="
+    M76 250 L119 225 M124 250 L81 225 M81 225 H119
+    M81 225 L114 195 M119 225 L86 195 M86 195 H114
+    M86 195 L111.5 165 M114 195 L88.5 165 M88.5 165 H111.5
+    M88.5 165 L109.5 140 M111.5 165 L90.5 140 M90.5 140 H109.5
+    M90.5 140 L108 115 M109.5 140 L92 115 M92 115 H108
+    M92 115 L106.5 92 M108 115 L93.5 92 M93.5 92 H106.5
+    M93.5 92 L105 69 M106.5 92 L95 69"/>
+
+  <!-- 4. Spire + antenna -->
+  <path class="t" pathLength="1000" d="M97.5 40 L100 30 L102.5 40 H97.5 M100 30 V8 M97 18 H103 M98.5 24 H101.5"/>
+
+  <!-- Twinkling lights -->
+  <circle cx="100" cy="8"   r="1.8"/>
+  <circle cx="50"  cy="316" r="1.6"/>
+  <circle cx="150" cy="316" r="1.6"/>
+  <circle cx="72"  cy="249" r="1.5"/>
+  <circle cx="128" cy="249" r="1.5"/>
+  <circle cx="90"  cy="69"  r="1.4"/>
+  <circle cx="110" cy="69"  r="1.4"/>
+</svg>
+
   </div>
  
   <a class="hint" href="#journey">Scroll to board the metro ↓</a>
