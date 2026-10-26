@@ -198,7 +198,6 @@ h1 {
   background: transparent;
   color: #fff;
   border: 2px solid #fff;
-  margin-left: 10px;
 }
  
 /* Eiffel Tower line-art that "draws itself" */
@@ -573,6 +572,165 @@ h1 {
   gap: 12px;
 }
 
+.journey-row {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 24px;
+  align-items: start;
+}
+
+.journey-row .info {
+  margin-top: 0;
+}
+
+.ticket {
+  display: grid;
+  grid-template-columns: 1fr 110px;
+  background: #f5e9ce;
+  color: #17213b;
+  border: 1px solid #d7bd88;
+  border-radius: 6px;
+  overflow: hidden;
+  font-family: 'Hind', sans-serif;
+}
+
+.tk-main {
+  padding: 20px;
+}
+
+.tk-top {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  font-size: 0.75rem;
+  letter-spacing: 0.08em;
+}
+
+.tk-route {
+  margin: 20px 0;
+  font-family: 'Fraunces', serif;
+  font-size: 1.4rem;
+}
+
+.tk-meta {
+  display: grid;
+  gap: 14px;
+}
+
+.tk-meta div {
+  display: grid;
+  gap: 3px;
+}
+
+.tk-meta small {
+  font-size: 0.75rem;
+  letter-spacing: 0.06em;
+}
+
+.tk-meta strong {
+  font-size: 0.95rem;
+}
+
+.tk-punches {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  list-style: none;
+  padding: 0;
+  margin: 22px 0 0;
+}
+
+.tk-punches li {
+  display: grid;
+  place-items: center;
+  width: 30px;
+  height: 30px;
+  border: 1px dashed #a28a5e;
+  border-radius: 50%;
+  font-size: 0.75rem;
+}
+
+.tk-punches li.done {
+  background: #17213b;
+  color: #f5e9ce;
+  border-style: solid;
+}
+
+.tk-stub {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+  padding: 18px 10px;
+  border-left: 2px dashed #c4a66e;
+}
+
+.tk-bars {
+  width: 100%;
+  height: 58px;
+  background: repeating-linear-gradient(
+    90deg,
+    #17213b 0 2px,
+    transparent 2px 5px,
+    #17213b 5px 6px,
+    transparent 6px 9px
+  );
+}
+
+.tk-stamp {
+  border: 2px solid #a84e5a;
+  color: #a84e5a;
+  padding: 8px;
+  text-align: center;
+  font-size: 0.8rem;
+  font-weight: 700;
+  transform: rotate(-8deg);
+  opacity: 0.55;
+}
+
+.tk-stamp small {
+  display: block;
+  font-size: 0.7rem;
+}
+
+.ticket.valid .tk-stamp {
+  opacity: 1;
+  animation: tk-validate 0.35s ease-out;
+}
+
+@keyframes tk-validate {
+  from {
+    transform: rotate(-8deg) scale(1.2);
+  }
+  to {
+    transform: rotate(-8deg) scale(1);
+  }
+}
+
+@media (max-width: 480px) {
+  .journey-row {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .ticket {
+    grid-template-columns: minmax(0, 1fr) 84px;
+  }
+
+  .tk-main {
+    padding: 14px;
+  }
+
+  .tk-route {
+    font-size: 1.2rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .ticket.valid .tk-stamp {
+    animation: none;
+  }
+}
 .journey-status {
   display: block;
   flex: 0 0 100%;
@@ -1020,7 +1178,7 @@ dialog input {
       <span>
         <a href="#journey">Journey</a>
         <a href="#work">Work</a>
-        <a href="#about">Skills</a>
+        <a href="#about">About</a>
         <a href="#contact">Contact</a>
       </span>
     </div>
@@ -1028,15 +1186,16 @@ dialog input {
  
   <div class="wrap">
     <div>
-      <p class="hello">Bonjuste · my own word for hello: a little bonjour, a little namaste</p>
+    <p class="hello">Bonjuste = bonjour + namaste</p>
       <h1>Bonjuste, <br>I’m Bhumi Aggarwal.</h1>
       <p class="lede">
-  I’m learning Java and backend development, building projects to strengthen my skills and understand how reliable systems work.
-  <span class="fr">Je construis, j’apprends, je progresse.</span>
+Backend developer from Delhi. I build APIs in Java and Spring Boot, co-lead the FOSS Club at DTC, and learn French on the side.
+ <span class="fr" lang="fr">Je construis, j’apprends, je progresse.</span>
 </p>
-      
-<a class="btn" href="mailto:YOUR_EMAIL@example.com">Email Me ↗</a>
-<a class="btn alt" href="#contact">Find me here ↗</a>
+  
+<div class="hero-actions"></div>
+<a class="btn" href="#work">See my work</a>
+<a class="btn alt" href="mailto:1210bhumiaggarwal@gmail.com">Email me</a>
 </div>
 
  
@@ -1139,7 +1298,45 @@ dialog input {
       <!-- Station buttons are added here by JavaScript -->
     </div>
  
-    <div class="info" id="info" aria-live="polite"></div>
+    <div class="journey-row">
+  <div class="ticket" id="ticket">
+    <div class="tk-main">
+      <div class="tk-top">
+        <span>BILLET · TICKET</span>
+        <span>1 VOYAGE</span>
+      </div>
+
+      <div class="tk-route">Delhi → Backend Dev</div>
+
+      <div class="tk-meta">
+        <div>
+          <small>PASSAGÈRE</small>
+          <strong>Bhumi Aggarwal</strong>
+        </div>
+        <div>
+          <small>CLASSE</small>
+          <strong>B.Tech CST, DTC</strong>
+        </div>
+        <div>
+          <small>VALABLE</small>
+          <strong>2022 → ∞</strong>
+        </div>
+      </div>
+
+      <ol class="tk-punches" id="punches" aria-label="Stations visited"></ol>
+    </div>
+
+    <div class="tk-stub">
+      <div class="tk-bars" aria-hidden="true"></div>
+      <div class="tk-stamp">
+        VALIDÉ
+        <small id="tkDate"></small>
+      </div>
+    </div>
+  </div>
+
+  <div class="info" id="info" aria-live="polite"></div>
+</div>
     <div class="metro-controls">
   <span class="journey-status" id="journeyStatus" aria-live="polite">
     Train in service
@@ -1329,7 +1526,7 @@ var pauseBtn = document.getElementById('pp');
  
 // State
 var currentStation = 0;     // index of the station we're at / heading to
-var autoPlay       = true;  // false when the user pauses
+var autoPlay       = false;  // false when the user pauses
 var isMoving       = false; // true while the train is gliding
 var nextTimer;              // timeout id for auto-advance
 var rafId;                  // requestAnimationFrame id
@@ -1389,12 +1586,42 @@ var stationButtons = milestones.map(function (m, i) {
   scene.appendChild(btn);
   return btn;
 });
+
+var ticket = document.getElementById('ticket');
+var statusEl = document.getElementById('journeyStatus');
+var punches = document.getElementById('punches');
+
+milestones.forEach(function (m, i) {
+  var li = document.createElement('li');
+  li.textContent = i + 1;
+  li.setAttribute('aria-label', m[0] + ' station');
+  punches.appendChild(li);
+});
  
 // Highlight the active station (pass -1 to clear)
 function markStation(i) {
   stationButtons.forEach(function (btn, j) {
     btn.setAttribute('aria-current', j == i);
   });
+}
+
+function punch(i) {
+  if (punches.children[i]) {
+    punches.children[i].classList.add('done');
+  }
+}
+
+function clearPunches() {
+  Array.from(punches.children).forEach(function (li) {
+    li.classList.remove('done');
+  });
+}
+
+function validateTicket() {
+  ticket.classList.add('valid');
+  document.getElementById('tkDate').textContent =
+    new Date().toLocaleDateString('fr-FR');
+  punch(currentStation);
 }
  
 // Start travelling to station i
@@ -1416,6 +1643,7 @@ function arrive() {
   train.classList.add('stop');
  
   var m = milestones[currentStation];
+  if (ticket.classList.contains('valid')) punch(currentStation);
   board.textContent = 'Now at → ' + m[0] + ' · ' + m[1];
   info.innerHTML =
     '<b>' + m[0] + '</b>' +
@@ -1451,12 +1679,15 @@ function leaveAndLoop() {
 
 pauseBtn.onclick = function () {
   clearTimeout(nextTimer);
-  autoPlay = true;
 
+  if (!ticket.classList.contains('valid')) {
+    validateTicket();
+  }
+
+  autoPlay = true;
   pauseBtn.textContent = 'Boarding…';
   pauseBtn.classList.add('is-active');
-  document.getElementById('journeyStatus').textContent =
-    'Train departing shortly';
+  statusEl.textContent = 'Ticket validated. Train departing shortly.';
 
   if (!isMoving) {
     nextTimer = setTimeout(function () {
